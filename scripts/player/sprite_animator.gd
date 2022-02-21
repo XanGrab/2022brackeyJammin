@@ -23,10 +23,10 @@ func _on_move(state, direction):
 		flip_h = false
 		anim_name += "down"
 	elif direction == Vector2(1, 0):
-		flip_h = false
+		flip_h = true
 		anim_name += "side"
 	else:
-		flip_h = true
+		flip_h = false
 		anim_name += "side"
 		
 	play(anim_name)

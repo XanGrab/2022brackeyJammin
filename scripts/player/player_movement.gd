@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 # speed at which the player moves. Try changing it for different results!
-const SPEED = 120
+const SPEED = 70
 
 # avoid modifying these
-const RAYCAST_LENGTH = 40
+const RAYCAST_LENGTH = 4
 const RAYCAST_LEEWAY = 1
 const SQUEEZE_SPEED = 30
 
