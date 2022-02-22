@@ -1,14 +1,13 @@
-
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/modular scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/test scene/Inventory.tscn" type="PackedScene" id=7]
 [ext_resource path="res://_Art/Items/feather.png" type="Texture" id=8]
 [ext_resource path="res://_Art/Items/Power_Bracelet.png" type="Texture" id=9]
 
 [node name="Node2D" type="Node2D"]
-
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -26,5 +25,8 @@ loaded_texture = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="Bed" parent="." instance=ExtResource( 2 )]
+position = Vector2( -134, 15 )
+move_to = "res://scenes/test scene/Dream.tscn"

@@ -20,10 +20,10 @@ func _ready():
 
 
 func on_item_picked_up(type):
-	match type:
-		GameManager.Item.KEY:
-			key_label.show()
-		GameManager.Item.BRACELET:
-			bracelet_label.show()
-		GameManager.Item.BADGE:
-			badge_label.show()          
+    match type:
+        GameManager.Item.KEY:
+            key_label.show()
+        GameManager.Item.BRACELET:
+            bracelet_label.show()
+        GameManager.Item.BADGE:
+            badge_label.show()          
