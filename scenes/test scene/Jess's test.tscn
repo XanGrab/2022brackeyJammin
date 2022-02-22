@@ -1,40 +1,20 @@
-[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scripts/player/debug_rays.gd" type="Script" id=1]
-[ext_resource path="res://scripts/player/Interactor.gd" type="Script" id=2]
-[ext_resource path="res://scripts/player/player_movement.gd" type="Script" id=3]
-[ext_resource path="res://playerspriteframes.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://scripts/player/sprite_animator.gd" type="Script" id=5]
-[ext_resource path="res://scenes/test scene/Item.tscn" type="PackedScene" id=6]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://scenes/modular scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/test scene/Inventory.tscn" type="PackedScene" id=7]
 [ext_resource path="res://_Art/Items/feather.png" type="Texture" id=8]
 [ext_resource path="res://_Art/Items/Power_Bracelet.png" type="Texture" id=9]
-[ext_resource path="res://scenes/Bed.tscn" type="PackedScene" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 3.5 )
-
-[node name="World" type="Node2D"]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-frames = ExtResource( 4 )
-animation = "Idle_down"
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, 4.5 )
-shape = SubResource( 1 )
+[node name="Node2D" type="Node2D"]
 
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="Item" parent="." instance=ExtResource( 6 )]
-position = Vector2( 49, 54 )
+position = Vector2( 47, 56 )
 loaded_texture = ExtResource( 8 )
 
 [node name="Item2" parent="." instance=ExtResource( 6 )]
@@ -47,15 +27,4 @@ loaded_texture = ExtResource( 9 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 
-[node name="Bed" parent="." instance=ExtResource( 10 )]
-position = Vector2( -136, 21 )
-move_to = "res://scenes/test scene/Dream.tscn"
-
-[node name="Bed" parent="." instance=ExtResource( 10 )]
-position = Vector2( -136, 21 )
-move_to = "res://scenes/test scene/Dream.tscn"
-
-[connection signal="debug_rays" from="KinematicBody2D" to="KinematicBody2D/DebugRayDraw" method="_on_debug_rays"]
-[connection signal="on_move" from="KinematicBody2D" to="KinematicBody2D/AnimatedSprite" method="_on_move"]
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource( 7 )]
-

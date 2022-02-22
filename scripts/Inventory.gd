@@ -18,6 +18,7 @@ func _ready():
             c.hide()
         index += 1
 
+
 func on_item_picked_up(type):
 	match type:
 		GameManager.Item.KEY:
