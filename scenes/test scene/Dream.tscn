@@ -12,12 +12,12 @@ move_to = "res://scenes/test scene/Jess's test.tscn"
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-move_to = "res://scenes/test scene/Jess's test.tscn"
-
 [node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( 135, 3 )
 move_to = "res://scenes/test scene/TestLevel.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+move_to = "res://scenes/test scene/Jess's test.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

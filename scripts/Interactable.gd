@@ -15,30 +15,30 @@ onready var root = get_tree().get_root()
 onready var dialogue_system = $"/root".get_child(root.get_child_count() - 1).get_node("CanvasLayer/Dialogue System")
 
 func _ready():
-    collision_layer = INTERACTION_COLLISION_LAYER;
-    
-    # warning-ignore:return_value_discarded
-    check_file_existence()
+	collision_layer = INTERACTION_COLLISION_LAYER;
+	
+	# warning-ignore:return_value_discarded
+	check_file_existence()
 
 # this method should be overridden if any extra functionality
 # is to be added when interacting with this entity
 func _on_interact() :
-    queue_dialogue()
+	queue_dialogue()
 
 func check_file_existence() -> bool:
-    if(dialogue_filename == ""):
-        return false
-    
-    var file_check = File.new()
-    
-    if (!file_check.file_exists(dialogue_filename)):
-        push_error("file \"" + dialogue_filename + "\" does not exist.")
-        return false
-    
-    return true
+	if(dialogue_filename == ""):
+		return false
+	
+	var file_check = File.new()
+	
+	if (!file_check.file_exists(dialogue_filename)):
+		push_error("file \"" + dialogue_filename + "\" does not exist.")
+		return false
+	
+	return true
 
 
 
 func queue_dialogue():
-    if(check_file_existence()):
-        dialogue_system.read_from_file_path(dialogue_filename)
+	if(check_file_existence()):
+		dialogue_system.read_from_file_path(dialogue_filename)

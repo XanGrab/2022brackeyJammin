@@ -9,7 +9,7 @@ var key = GameManager.Item.KEY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    pass # Replace with function body.
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,5 +18,5 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-    if GameManager.inventory_flags[key]:
-        GameManager.goto_scene(move_to)
+	if GameManager.inventory_flags[key]:
+		GameManager.goto_scene(move_to)
