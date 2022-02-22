@@ -8,7 +8,6 @@ onready var sprite = $Sprite
 func _ready():
 	sprite.texture = loaded_texture
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #    pass
