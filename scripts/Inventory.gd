@@ -10,7 +10,13 @@ onready var badge_label = $Panel/MarginContainer/GridContainer/Badge
 # Called when the node enters the scene tree for the first time.
 func _ready():
     SignalBus.connect("item_picked_up", self, "on_item_picked_up")
-    get_tree().call_group("items", "hide")
+    var index = 0
+    for c in $Panel/MarginContainer/GridContainer.get_children():
+        if GameManager.inventory_flags[index]:
+            c.show()
+        else:
+            c.hide()
+        index += 1
 
 func on_item_picked_up(type):
     match type:
