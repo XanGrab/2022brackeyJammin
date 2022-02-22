@@ -6,4 +6,4 @@ extends Node
 # this is a good variable to read from
 
 # use Debug.DEBUG_MODE to read whether debug mode is turned on.
-const DEBUG_MODE = false
+const DEBUG_MODE = true

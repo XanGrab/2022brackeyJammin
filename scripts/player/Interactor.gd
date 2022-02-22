@@ -7,15 +7,16 @@ const RAY_LENGTH = 12
 
 onready var player = $".." # gets reference to player_movement.gd
 
+signal draw_interact_ray(origin, cast_to)
+
 func _physics_process(_delta):
 	cast_to = player.direction * RAY_LENGTH
 		
 func interact():
+	if(Debug.DEBUG_MODE):
+		emit_signal("draw_interact_ray", position, cast_to)
+	
 	if(is_colliding()):
 		var collider = get_collider()
 		if(collider is Interactable):
-			var file_path = collider.get_file_path()
-			if(file_path != ""):
-				player.dialogue_system.read_from_file_path(collider.get_file_path())
-			
 			collider._on_interact()

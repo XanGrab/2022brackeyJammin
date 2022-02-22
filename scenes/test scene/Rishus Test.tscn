@@ -1,37 +1,46 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/player/debug_rays.gd" type="Script" id=1]
-[ext_resource path="res://scripts/player/Interactor.gd" type="Script" id=2]
-[ext_resource path="res://scripts/player/player_movement.gd" type="Script" id=3]
-[ext_resource path="res://playerspriteframes.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://scripts/player/sprite_animator.gd" type="Script" id=5]
+[ext_resource path="res://scenes/modular scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player resources/programmer_art.tres" type="TileSet" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Interactable.gd" type="Script" id=4]
+[ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 3.5 )
+extents = Vector2( 32.3441, 32 )
 
 [node name="Node2D" type="Node2D"]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-frames = ExtResource( 4 )
-animation = "Idle_down"
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0, 4.5 )
-shape = SubResource( 1 )
-
-[node name="InteractRay" type="RayCast2D" parent="KinematicBody2D"]
-cast_to = Vector2( 0, 6 )
-script = ExtResource( 2 )
-
-[node name="DebugRayDraw" type="Node2D" parent="KinematicBody2D"]
-script = ExtResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[connection signal="debug_rays" from="KinematicBody2D" to="KinematicBody2D/DebugRayDraw" method="_on_debug_rays"]
-[connection signal="on_move" from="KinematicBody2D" to="KinematicBody2D/AnimatedSprite" method="_on_move"]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( -262154, 0, 0, -196618, 5, 0, -196617, 5, 0, -196616, 5, 0, -196615, 5, 0, -196614, 5, 0, -196613, 5, 0, -196612, 5, 0, -196611, 5, 0, -196610, 5, 0, -196609, 5, 0, -262144, 5, 0, -262143, 5, 0, -262142, 5, 0, -262141, 5, 0, -262140, 5, 0, -262139, 5, 0, -262138, 5, 0, -131082, 5, 0, -131081, 5, 0, -196603, 5, 0, -196602, 5, 0, -196601, 5, 0, -65546, 5, 0, -65545, 5, 0, -131067, 5, 0, -131066, 5, 0, -131065, 5, 0, -10, 5, 0, -9, 5, 0, -65531, 5, 0, -65530, 5, 0, -65529, 5, 0, 65526, 5, 0, 65527, 5, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 131062, 5, 0, 131063, 5, 0, 131067, 13, 0, 65542, 5, 0, 65543, 11, 0, 196598, 5, 0, 196599, 5, 0, 131077, 10, 0, 131078, 10, 0, 131079, 11, 0, 196613, 10, 0, 196614, 10, 0, 196615, 11, 0, 262150, 10, 0, 262151, 11, 0, 327681, 13, 0, 327682, 14, 0, 327683, 13, 0, 327684, 14, 0, 327685, 13, 0, 327686, 14, 0, 327687, 15, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 9, -30 )
+scale = Vector2( 1.45312, 0.15625 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+dialogue_filename = "res://sample_dialogue.txt"
+
+[node name="Icon" type="Sprite" parent="Area2D"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialogue System" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[connection signal="on_dialogue_close" from="CanvasLayer/Dialogue System" to="Player" method="_on_dialogue_close"]
+[connection signal="on_dialogue_open" from="CanvasLayer/Dialogue System" to="Player" method="_on_dialogue_open"]
