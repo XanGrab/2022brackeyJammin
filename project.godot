@@ -11,11 +11,14 @@ config_version=4
 [application]
 
 config/name="2022 Brackey Jammin"
+run/main_scene="res://scenes/test scene/Jess's test.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Debug="*res://scripts/Debug.gd"
+SignalBus="*res://scripts/signal_bus.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 

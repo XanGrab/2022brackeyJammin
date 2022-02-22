@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://_Art/inventory_theme.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 86.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 81.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 7
+
+[node name="Key" type="Label" parent="Panel/MarginContainer/GridContainer" groups=["items"]]
+margin_right = 71.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+text = "KEY"
+
+[node name="Bracelet" type="Label" parent="Panel/MarginContainer/GridContainer" groups=["items"]]
+margin_top = 15.0
+margin_right = 71.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 2 )
+text = "Bracelet"
+
+[node name="Badge" type="Label" parent="Panel/MarginContainer/GridContainer" groups=["items"]]
+margin_top = 30.0
+margin_right = 71.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 2 )
+text = "Badge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
