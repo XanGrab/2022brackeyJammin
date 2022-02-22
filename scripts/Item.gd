@@ -1,11 +1,12 @@
 extends Node2D
 
 export(GameManager.Item) var type 
+export(Texture) var loaded_texture
 
-
+onready var sprite = $Sprite
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    pass # Replace with function body.
+    sprite.texture = loaded_texture
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
