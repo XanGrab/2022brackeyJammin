@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Power_Bracelet.png-e2ff0209c2cd95fb3b0f5e33b77e9792.stex"
+path="res://.import/continue_dialogue3.png-ae07dd7f14f23828543f763ea560c723.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Art/Items/Power_Bracelet.png"
-dest_files=[ "res://.import/Power_Bracelet.png-e2ff0209c2cd95fb3b0f5e33b77e9792.stex" ]
+source_file="res://UI/continue_dialogue/continue_dialogue3.png"
+dest_files=[ "res://.import/continue_dialogue3.png-ae07dd7f14f23828543f763ea560c723.stex" ]
 
 [params]
 

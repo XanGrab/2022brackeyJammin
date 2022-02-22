@@ -11,6 +11,7 @@ func _ready():
         queue_free()
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #    pass
@@ -18,5 +19,5 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-    SignalBus.emit_signal("item_picked_up", type)
-    queue_free()
+	SignalBus.emit_signal("item_picked_up", type)
+	queue_free()

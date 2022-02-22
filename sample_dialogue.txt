@@ -1,0 +1,26 @@
+<NoTag>                    You reach into the void.
+                           Suddenly, a voice calls out to you.
+
+
+
+
+
+
+<the voice>       Whenever the person speaking changes, you must use angle brackets to specify.
+
+<the voice>       It is okay if you put the same person in the angle brackets, 
+                           it will not affect the dialogue system
+
+<the voice>       If for some reason, you need to use angle brackets within your <dialogue>...
+                           you must respecify the character in that line.
+
+
+                           Please try to keep each line relatively short.
+If it doesn't fit in the dialogue box, it will get cut off. For example, since I'm cramming two sentences onto this line, it will most likely get cut off.
+
+                           effects are done [rainbow]like so![/rainbow] Isn't that great!
+                           They can be chained together [rainbow][shake level=9]like that![/shake][/rainbow]
+
+
+
+<the voice>           [tornado radius=2 freq=-6] Wowie![/tornado]
