@@ -6,7 +6,10 @@ export(Texture) var loaded_texture
 onready var sprite = $Sprite
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite.texture = loaded_texture
+    sprite.texture = loaded_texture
+    if GameManager.inventory_flags[type]:
+        queue_free()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
