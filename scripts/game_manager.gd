@@ -32,6 +32,7 @@ func _deferred_goto_scene(path):
     var s = ResourceLoader.load(path)
 
     # Instance the new scene.
+    #if it crashes you forgot to set .tscn for move_to export var
     current_scene = s.instance()
 
     # Add it to the active scene, as child of root.
