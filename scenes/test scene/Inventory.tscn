@@ -45,7 +45,7 @@ custom_constants/vseparation = 7
 margin_right = 71.0
 margin_bottom = 8.0
 custom_fonts/font = ExtResource( 2 )
-text = "KEY"
+text = "Key"
 
 [node name="Bracelet" type="Label" parent="Panel/MarginContainer/GridContainer" groups=["items"]]
 margin_top = 15.0
