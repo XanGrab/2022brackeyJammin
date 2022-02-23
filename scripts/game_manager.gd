@@ -18,7 +18,7 @@ func _ready():
 
 func on_item_picked_up(type):
 	inventory_flags[type] = true
-	print(inventory_flags)
+
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
