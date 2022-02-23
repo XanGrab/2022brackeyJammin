@@ -8,6 +8,9 @@ const RAYCAST_LENGTH = 4
 const RAYCAST_LEEWAY = 1
 const SQUEEZE_SPEED = 40
 
+#Make sure move_to is set to a .tscn!!
+export(String, FILE) var move_to
+
 onready var shapeNode : CollisionShape2D = $"CollisionShape2D"
 onready var interactor : RayCast2D = $"InteractRay"
 onready var playerShape : RectangleShape2D = shapeNode.shape;
@@ -52,6 +55,12 @@ func _physics_process(_delta):
 		PlayerState.SCENETRANSITION:
 			move()
 	emit_signal("on_move", _player_state_machine, direction)
+
+	#if 'R' pressed, return to real world
+	if Input.is_action_just_pressed("wake_up"):
+		#if it crashes here, you forgot to set a .tscn in the export var
+		GameManager.goto_scene(move_to)
+		
 func _input(event):
 	match _player_state_machine:
 		PlayerState.IDLE:
