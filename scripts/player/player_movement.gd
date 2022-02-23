@@ -55,6 +55,7 @@ func _physics_process(_delta):
 		PlayerState.SCENETRANSITION:
 			move()
 	emit_signal("on_move", _player_state_machine, direction)
+
 	#if 'R' pressed, return to real world
 	if Input.is_action_just_pressed("wake_up"):
 		#if it crashes here, you forgot to set a .tscn in the export var
