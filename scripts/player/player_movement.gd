@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 # speed at which the player moves. Try changing it for different results!
 const SPEED = 90
+const PUSH_SPEED = 30
 
 # avoid modifying these
 const RAYCAST_LENGTH = 4
@@ -20,12 +21,14 @@ signal debug_rays(origins, hits, direction)
 onready var root = get_tree().get_root()
 # onready var dialogue_system = $"/root".get_child(root.get_child_count() - 1).get_node("CanvasLayer/Dialogue System")
 
-enum PlayerState {SCENETRANSITION, DIALOGUE, IDLE, MOVE}
+enum PlayerState {SCENETRANSITION, DIALOGUE, IDLE, MOVE, PUSHPULL}
 
 onready var _player_state_machine = PlayerState.IDLE
 
 onready var direction : Vector2 = Vector2(0, 1)
 onready var input: Vector2 = Vector2()
+onready var pushObject: KinematicBody2D = null
+
 
 signal on_move(state, direction)
 
@@ -44,7 +47,7 @@ func _on_dialogue_close():
 	interactor.enabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
+func _physics_process(delta):
 	match _player_state_machine:
 		PlayerState.IDLE:
 			read_input()
@@ -52,6 +55,16 @@ func _physics_process(_delta):
 		PlayerState.MOVE:
 			read_input()
 			move()
+		PlayerState.PUSHPULL:
+			read_input()
+			if(isCardinal(input) && abs(input.x) == abs(direction.x)):
+				move_and_slide(input * PUSH_SPEED)
+				pushObject.move_and_slide(input * PUSH_SPEED)
+
+			
+			if(!Input.is_action_pressed("grab")):
+				set_state(PlayerState.IDLE)
+				pushObject = null
 		PlayerState.SCENETRANSITION:
 			move()
 	emit_signal("on_move", _player_state_machine, direction)
@@ -88,6 +101,10 @@ func read_input() -> void:
 	
 	# note: zero vector remains unchanged
 	input = input.normalized()
+
+func start_pushing(object) -> void:
+	pushObject = object
+	set_state(PlayerState.PUSHPULL)
 
 func move() -> void: 
 	if _player_state_machine == PlayerState.IDLE || _player_state_machine == PlayerState.MOVE:

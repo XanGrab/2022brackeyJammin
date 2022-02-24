@@ -7,7 +7,7 @@
 [ext_resource path="res://player resources/playerspriteframes.tres" type="SpriteFrames" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 7 )
+extents = Vector2( 7, 8 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 3 )

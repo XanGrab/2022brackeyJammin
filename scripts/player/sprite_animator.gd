@@ -14,6 +14,9 @@ func _on_move(state, direction):
 		parent.PlayerState.SCENETRANSITION:
 			anim_name = "Walk"
 	
+	if(anim_name == ""):
+		anim_name = "Idle"
+	
 	anim_name += "_"
 	
 	if direction == Vector2(0, -1):

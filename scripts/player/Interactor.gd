@@ -18,5 +18,14 @@ func interact():
 	
 	if(is_colliding()):
 		var collider = get_collider()
+		
 		if(collider is Interactable):
 			collider._on_interact()
+
+func _input(event):
+	if(Input.is_action_pressed("grab") && is_colliding()):
+		var collider = get_collider()
+		print(collider)
+			
+		if(collider.is_in_group("Pushable")):
+			player.start_pushing(collider)

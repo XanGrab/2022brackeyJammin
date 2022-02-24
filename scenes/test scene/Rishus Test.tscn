@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/modular scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player resources/programmer_art.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.3441, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -40,6 +42,17 @@ shape = SubResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Dialogue System" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." groups=["Pushable"]]
+position = Vector2( -9, 32 )
+collision_layer = 3
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" groups=["Pushable"]]
+shape = SubResource( 2 )
 
 [connection signal="on_dialogue_close" from="CanvasLayer/Dialogue System" to="Player" method="_on_dialogue_close"]
 [connection signal="on_dialogue_open" from="CanvasLayer/Dialogue System" to="Player" method="_on_dialogue_open"]
