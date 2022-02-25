@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/modular scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Dream.gd" type="Script" id=2]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/test scene/Inventory.tscn" type="PackedScene" id=7]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://_Art/Bedroom/bedroom.tres" type="TileSet" id=1]
 [ext_resource path="res://_Art/Bedroom/Bedroom Environment Tiles.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://_Art/Items/feather.png" type="Texture" id=7]
+[ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/modular scenes/Characters/Oldman.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Walls"
@@ -81,6 +84,14 @@ move_to = "res://scenes/world/Real World/hallway_r.tscn"
 position = Vector2( -128, -16 )
 z_index = 1
 move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
+
+[node name="Item" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 32, 56 )
+loaded_texture = ExtResource( 7 )
+
+[node name="Oldman" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 96, -40 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="Wall (TileMap)" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
