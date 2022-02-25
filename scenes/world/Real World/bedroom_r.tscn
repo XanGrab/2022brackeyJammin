@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://_Art/Bedroom/bedroom.tres" type="TileSet" id=1]
 [ext_resource path="res://_Art/Bedroom/Bedroom Environment Tiles.png" type="Texture" id=2]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/modular scenes/Characters/Oldman.tscn" type="PackedScene" id=7]
 
@@ -71,14 +70,14 @@ tile_data = PoolIntArray( -327690, 1, 0, -327688, 1, 0, -327686, 1, 0, -327684, 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Oldman" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 19, -51 )
+position = Vector2( 17, -65 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 40, -21 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -40, -80 )
+position = Vector2( 28, -44 )
 scale = Vector2( 2, 2 )
-z_index = 1
 move_to = "res://scenes/world/Real World/hallway_r.tscn"
 
 [node name="Bed" parent="YSort" instance=ExtResource( 4 )]
@@ -90,7 +89,3 @@ move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Dialogue System" parent="CanvasLayer" instance=ExtResource( 5 )]

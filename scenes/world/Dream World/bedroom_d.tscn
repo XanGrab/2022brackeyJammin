@@ -1,62 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://_Art/Bedroom/bedroom.tres" type="TileSet" id=1]
-[ext_resource path="res://_Art/Bedroom/Bedroom Environment Tiles.png" type="Texture" id=2]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://_Art/Items/feather.png" type="Texture" id=7]
 [ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/modular scenes/Characters/Oldman.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
-0/name = "Walls"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 384, 368 )
-0/tile_mode = 1
-0/autotile/bitmask_mode = 0
-0/autotile/bitmask_flags = [ Vector2( 8, 2 ), 262144 ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 16, 16 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "Bedroom Environment Tiles.png 1"
-1/texture = ExtResource( 2 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 112, 138, 16, 46 )
-1/tile_mode = 1
-1/autotile/bitmask_mode = 0
-1/autotile/bitmask_flags = [  ]
-1/autotile/icon_coordinate = Vector2( 0, 0 )
-1/autotile/tile_size = Vector2( 16, 46 )
-1/autotile/spacing = 0
-1/autotile/occluder_map = [  ]
-1/autotile/navpoly_map = [  ]
-1/autotile/priority_map = [  ]
-1/autotile/z_index_map = [  ]
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
 
 [node name="Node2D" type="Node2D"]
 
@@ -77,7 +29,6 @@ tile_data = PoolIntArray( -327690, 1, 0, -327688, 1, 0, -327686, 1, 0, -327684, 
 [node name="Door" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -40, -80 )
 scale = Vector2( 2, 2 )
-z_index = 1
 move_to = "res://scenes/world/Real World/hallway_r.tscn"
 
 [node name="Bed" parent="YSort" instance=ExtResource( 4 )]
@@ -97,7 +48,3 @@ scale = Vector2( 0.75, 0.75 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Dialogue System" parent="CanvasLayer" instance=ExtResource( 5 )]
