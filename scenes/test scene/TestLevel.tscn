@@ -5,7 +5,6 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=4]
 
-
 [node name="TestLevel" type="Node2D"]
 
 [node name="ElectriFire" parent="." instance=ExtResource( 2 )]

@@ -10,6 +10,7 @@ onready var player = $".." # gets reference to player_movement.gd
 
 func _ready():
 	enabled = false
+# warning-ignore:return_value_discarded
 	SignalBus.connect("item_picked_up", self, "_on_item_collection")
 	
 
@@ -22,7 +23,7 @@ func _physics_process(_delta):
 			player.stop_pushing()
 
 func _input(event):
-	if(Input.is_action_pressed("grab") && is_colliding()):
+	if(event.is_action_pressed("grab") && is_colliding()):
 		var collider = get_collider()
 			
 		if(collider.is_in_group("Pushable")):
@@ -34,5 +35,5 @@ func update_grab_ability():
 	else:
 		enabled = false
 
-func _on_item_collection(item):
+func _on_item_collection(_item):
 	update_grab_ability()

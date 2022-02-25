@@ -1,5 +1,5 @@
 
-extends Control
+extends CanvasLayer
 
 # imports the Dialogue class defined in dialogue.gd
 const Dialogue = preload("res://scripts/dialogue system/Dialogue.gd")
@@ -34,6 +34,8 @@ var typing_timer = 0
 var _dialogue_queue = [] # queue of lines to say
 var current_dialogue : Dialogue
 var _dialogue_state_machine # is true when dialogue is being displayed
+
+onready var marginContainer : MarginContainer = $MarginContainer
 
 onready var _current_options : OptionSet = null
 onready var selected : int = 0
@@ -86,8 +88,8 @@ func _input(event):
 					selected = _current_options.option_text.size() - 1
 				emit_signal("option_change", selected)
 			
-	if(Input.is_key_pressed(KEY_2) && _dialogue_queue.empty()):
-		read_from_file_path("res://sample_dialogue.txt")
+#	if(Input.is_key_pressed(KEY_2) && _dialogue_queue.empty()):
+#		read_from_file_path("res://sample_dialogue.txt")
 
 # method used to initiate a dialogue sequence from a filename
 func read_from_file_path(fileName : String) -> void:
@@ -131,13 +133,13 @@ func read_from_file_path(fileName : String) -> void:
 func set_state(state : int) -> void:
 	match(state):
 		DialogueState.INACTIVE:
-			visible = false
+			marginContainer.visible = false
 			
 		DialogueState.SCROLL_TXT:
 			emit_signal("display_text")
 			
 			if(_dialogue_state_machine == DialogueState.INACTIVE):
-				visible = true
+				marginContainer.visible = true
 				emit_signal("on_dialogue_open")
 		
 		DialogueState.OPTIONS:

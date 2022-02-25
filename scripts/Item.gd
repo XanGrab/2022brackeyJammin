@@ -16,5 +16,6 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	SignalBus.emit_signal("item_picked_up", type)
-	queue_free()
+	if(body.name == "Player"):
+		SignalBus.emit_signal("item_picked_up", type)
+		queue_free()

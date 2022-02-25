@@ -11,6 +11,8 @@ signal draw_interact_ray(origin, cast_to)
 
 func _physics_process(_delta):
 	cast_to = player.direction * RAY_LENGTH
+	if(Debug.DEBUG_MODE):
+		emit_signal("draw_interact_ray", position, cast_to)
 		
 func interact():
 	if(is_colliding()):

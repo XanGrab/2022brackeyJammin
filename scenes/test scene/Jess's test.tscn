@@ -7,7 +7,7 @@
 [ext_resource path="res://_Art/Items/feather.png" type="Texture" id=8]
 [ext_resource path="res://_Art/Items/Power_Bracelet.png" type="Texture" id=9]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

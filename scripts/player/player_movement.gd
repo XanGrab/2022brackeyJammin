@@ -18,9 +18,6 @@ onready var playerShape : RectangleShape2D = shapeNode.shape;
 onready var rayDebugger : Node2D = $"DebugRayDraw"
 signal debug_rays(origins, hits, direction)
 
-onready var root = get_tree().get_root()
-# onready var dialogue_system = $"/root".get_child(root.get_child_count() - 1).get_node("CanvasLayer/Dialogue System")
-
 enum PlayerState {SCENETRANSITION, DIALOGUE, IDLE, MOVE, PUSHPULL}
 
 onready var _player_state_machine = PlayerState.IDLE
@@ -31,9 +28,6 @@ onready var pushObject: KinematicBody2D = null
 
 
 signal on_move(state, direction, input)
-
-func _ready():
-	pass
 
 func set_state(new_state : int):
 	_player_state_machine = new_state
@@ -46,8 +40,14 @@ func _on_dialogue_close():
 	_player_state_machine = PlayerState.IDLE
 	interactor.enabled = true
 
+func _ready():
+	# warning-ignore:return_value_discarded
+	DialogueSystem.connect("on_dialogue_close", self, "_on_dialogue_close")
+	# warning-ignore:return_value_discarded
+	DialogueSystem.connect("on_dialogue_open", self, "_on_dialogue_open")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	match _player_state_machine:
 		PlayerState.IDLE:
 			read_input()
@@ -58,7 +58,9 @@ func _physics_process(delta):
 		PlayerState.PUSHPULL:
 			read_input()
 			if(isCardinal(input) && abs(input.x) == abs(direction.x)):
+				# warning-ignore:return_value_discarded
 				move_and_slide(input * PUSH_SPEED)
+				# warning-ignore:return_value_discarded
 				pushObject.move_and_slide(input * PUSH_SPEED)
 			
 			if(!Input.is_action_pressed("grab")):

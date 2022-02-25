@@ -13,7 +13,10 @@
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 3 )
 
-[node name="Margin Container" type="MarginContainer"]
+[node name="Dialogue System" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,19 +25,17 @@ margin_top = -55.0
 margin_right = -5.0
 margin_bottom = -5.0
 grow_vertical = 0
-rect_min_size = Vector2( 0, 50 )
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NT_Container" type="Control" parent="."]
+[node name="NT_Container" type="Control" parent="MarginContainer"]
 visible = false
 margin_right = 310.0
 margin_bottom = 50.0
 script = ExtResource( 12 )
 
-[node name="Name Tag" type="Panel" parent="NT_Container"]
+[node name="Name Tag" type="Panel" parent="MarginContainer/NT_Container"]
 margin_left = 8.0
 margin_top = -17.0
 margin_right = 97.0
@@ -48,7 +49,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="NT_Container/Name Tag"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/NT_Container/Name Tag"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 7.0
@@ -67,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background Panel" type="Panel" parent="."]
+[node name="Background Panel" type="Panel" parent="MarginContainer"]
 margin_right = 310.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -77,7 +78,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dialogue" type="HBoxContainer" parent="Background Panel"]
+[node name="Dialogue" type="HBoxContainer" parent="MarginContainer/Background Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 12.0
@@ -90,14 +91,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Portrait Container" type="CenterContainer" parent="Background Panel/Dialogue"]
+[node name="Portrait Container" type="CenterContainer" parent="MarginContainer/Background Panel/Dialogue"]
 margin_bottom = 32.0
 
-[node name="Portrait Image" type="TextureRect" parent="Background Panel/Dialogue/Portrait Container"]
+[node name="Portrait Image" type="TextureRect" parent="MarginContainer/Background Panel/Dialogue/Portrait Container"]
 margin_top = 16.0
 margin_bottom = 16.0
 
-[node name="Text" type="RichTextLabel" parent="Background Panel/Dialogue"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/Background Panel/Dialogue"]
 margin_left = 4.0
 margin_right = 274.0
 margin_bottom = 32.0
@@ -110,7 +111,7 @@ text = "Press <1> to hear paper kid & press <2> to hear sample!"
 scroll_active = false
 scroll_following = true
 
-[node name="Continue Button" type="TextureRect" parent="Background Panel/Dialogue"]
+[node name="Continue Button" type="TextureRect" parent="MarginContainer/Background Panel/Dialogue"]
 margin_left = 278.0
 margin_top = 24.0
 margin_right = 286.0
@@ -118,7 +119,7 @@ margin_bottom = 32.0
 size_flags_vertical = 8
 texture = ExtResource( 5 )
 
-[node name="Options List" type="VBoxContainer" parent="Background Panel"]
+[node name="Options List" type="VBoxContainer" parent="MarginContainer/Background Panel"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -133,17 +134,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option1" type="HBoxContainer" parent="Background Panel/Options List"]
+[node name="Option1" type="HBoxContainer" parent="MarginContainer/Background Panel/Options List"]
 margin_right = 286.0
 margin_bottom = 11.0
 size_flags_vertical = 3
 
-[node name="SelectorContainer" type="VBoxContainer" parent="Background Panel/Options List/Option1"]
+[node name="SelectorContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option1"]
 margin_right = 8.0
 margin_bottom = 11.0
 alignment = 1
 
-[node name="FreeRotate" type="Control" parent="Background Panel/Options List/Option1/SelectorContainer"]
+[node name="FreeRotate" type="Control" parent="MarginContainer/Background Panel/Options List/Option1/SelectorContainer"]
 margin_top = 1.0
 margin_right = 8.0
 margin_bottom = 9.0
@@ -152,7 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Selector" type="TextureRect" parent="Background Panel/Options List/Option1/SelectorContainer/FreeRotate"]
+[node name="Selector" type="TextureRect" parent="MarginContainer/Background Panel/Options List/Option1/SelectorContainer/FreeRotate"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_rotation = -90.0
@@ -163,14 +164,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextContainer" type="VBoxContainer" parent="Background Panel/Options List/Option1"]
+[node name="TextContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option1"]
 margin_left = 12.0
 margin_right = 286.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="Background Panel/Options List/Option1/TextContainer"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/Background Panel/Options List/Option1/TextContainer"]
 margin_right = 274.0
 margin_bottom = 11.0
 rect_min_size = Vector2( 0, 11 )
@@ -186,18 +187,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option2" type="HBoxContainer" parent="Background Panel/Options List"]
+[node name="Option2" type="HBoxContainer" parent="MarginContainer/Background Panel/Options List"]
 margin_top = 15.0
 margin_right = 286.0
 margin_bottom = 26.0
 size_flags_vertical = 3
 
-[node name="SelectorContainer" type="VBoxContainer" parent="Background Panel/Options List/Option2"]
+[node name="SelectorContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option2"]
 margin_right = 8.0
 margin_bottom = 11.0
 alignment = 1
 
-[node name="FreeRotate" type="Control" parent="Background Panel/Options List/Option2/SelectorContainer"]
+[node name="FreeRotate" type="Control" parent="MarginContainer/Background Panel/Options List/Option2/SelectorContainer"]
 margin_top = 1.0
 margin_right = 8.0
 margin_bottom = 9.0
@@ -206,14 +207,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextContainer" type="VBoxContainer" parent="Background Panel/Options List/Option2"]
+[node name="TextContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option2"]
 margin_left = 12.0
 margin_right = 286.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="Background Panel/Options List/Option2/TextContainer"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/Background Panel/Options List/Option2/TextContainer"]
 margin_right = 274.0
 margin_bottom = 11.0
 rect_min_size = Vector2( 0, 11 )
@@ -229,18 +230,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option3" type="HBoxContainer" parent="Background Panel/Options List"]
+[node name="Option3" type="HBoxContainer" parent="MarginContainer/Background Panel/Options List"]
 margin_top = 30.0
 margin_right = 286.0
 margin_bottom = 41.0
 size_flags_vertical = 3
 
-[node name="SelectorContainer" type="VBoxContainer" parent="Background Panel/Options List/Option3"]
+[node name="SelectorContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option3"]
 margin_right = 8.0
 margin_bottom = 11.0
 alignment = 1
 
-[node name="FreeRotate" type="Control" parent="Background Panel/Options List/Option3/SelectorContainer"]
+[node name="FreeRotate" type="Control" parent="MarginContainer/Background Panel/Options List/Option3/SelectorContainer"]
 margin_top = 1.0
 margin_right = 8.0
 margin_bottom = 9.0
@@ -249,14 +250,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextContainer" type="VBoxContainer" parent="Background Panel/Options List/Option3"]
+[node name="TextContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option3"]
 margin_left = 12.0
 margin_right = 286.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="Background Panel/Options List/Option3/TextContainer"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/Background Panel/Options List/Option3/TextContainer"]
 margin_right = 274.0
 margin_bottom = 11.0
 rect_min_size = Vector2( 0, 11 )
@@ -272,18 +273,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option4" type="HBoxContainer" parent="Background Panel/Options List"]
+[node name="Option4" type="HBoxContainer" parent="MarginContainer/Background Panel/Options List"]
 margin_top = 45.0
 margin_right = 286.0
 margin_bottom = 56.0
 size_flags_vertical = 3
 
-[node name="SelectorContainer" type="VBoxContainer" parent="Background Panel/Options List/Option4"]
+[node name="SelectorContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option4"]
 margin_right = 8.0
 margin_bottom = 11.0
 alignment = 1
 
-[node name="FreeRotate" type="Control" parent="Background Panel/Options List/Option4/SelectorContainer"]
+[node name="FreeRotate" type="Control" parent="MarginContainer/Background Panel/Options List/Option4/SelectorContainer"]
 margin_top = 1.0
 margin_right = 8.0
 margin_bottom = 9.0
@@ -292,14 +293,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextContainer" type="VBoxContainer" parent="Background Panel/Options List/Option4"]
+[node name="TextContainer" type="VBoxContainer" parent="MarginContainer/Background Panel/Options List/Option4"]
 margin_left = 12.0
 margin_right = 286.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="Background Panel/Options List/Option4/TextContainer"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/Background Panel/Options List/Option4/TextContainer"]
 margin_right = 274.0
 margin_bottom = 11.0
 rect_min_size = Vector2( 0, 11 )
@@ -315,41 +316,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sounds" type="Node2D" parent="."]
+[node name="Sounds" type="Node2D" parent="MarginContainer"]
 position = Vector2( 200, 0 )
 script = ExtResource( 14 )
 
-[node name="Dialogue Scroll" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Dialogue Scroll" type="AudioStreamPlayer" parent="MarginContainer/Sounds"]
 volume_db = -25.0
 pitch_scale = 0.29
 
-[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Select" type="AudioStreamPlayer" parent="MarginContainer/Sounds"]
 volume_db = -10.0
 
-[node name="Change Option" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Change Option" type="AudioStreamPlayer" parent="MarginContainer/Sounds"]
 volume_db = -10.0
 
-[node name="Advance" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Advance" type="AudioStreamPlayer" parent="MarginContainer/Sounds"]
 volume_db = -80.0
 pitch_scale = 1.5
 
-[connection signal="dialogue_advance" from="." to="NT_Container" method="_on_dialogue_advance"]
-[connection signal="dialogue_advance" from="." to="Background Panel/Dialogue" method="_on_dialogue_advance"]
-[connection signal="dialogue_advance" from="." to="Sounds" method="_on_dialogue_advance"]
-[connection signal="display_options" from="." to="NT_Container" method="_on_display_options"]
-[connection signal="display_options" from="." to="Background Panel" method="_on_display_options"]
-[connection signal="display_options" from="." to="Background Panel/Dialogue" method="_on_display_options"]
-[connection signal="display_options" from="." to="Background Panel/Options List" method="_on_display_options"]
-[connection signal="display_options" from="." to="Sounds" method="_on_display_options"]
-[connection signal="display_text" from="." to="NT_Container" method="_on_display_text"]
-[connection signal="display_text" from="." to="Background Panel" method="_on_display_text"]
-[connection signal="display_text" from="." to="Background Panel/Dialogue" method="_on_display_text"]
-[connection signal="display_text" from="." to="Background Panel/Options List" method="_on_display_text"]
-[connection signal="on_dialogue_close" from="." to="Sounds" method="_on_dialogue_close"]
-[connection signal="option_change" from="." to="Background Panel/Options List" method="_on_option_change"]
-[connection signal="option_change" from="." to="Sounds" method="_on_option_change"]
-[connection signal="option_select" from="." to="Sounds" method="_on_option_select"]
-[connection signal="scroll_text" from="." to="Background Panel/Dialogue" method="_on_scroll_text"]
-[connection signal="scroll_text_fast" from="." to="Background Panel/Dialogue" method="_on_scroll_text_fast"]
-[connection signal="dialogue_scrolled" from="Background Panel/Dialogue" to="." method="_on_dialogue_scrolled"]
-[connection signal="scroll_sound" from="Background Panel/Dialogue" to="Sounds" method="_trigger_scroll_sound"]
+[connection signal="dialogue_advance" from="." to="MarginContainer/NT_Container" method="_on_dialogue_advance"]
+[connection signal="dialogue_advance" from="." to="MarginContainer/Background Panel/Dialogue" method="_on_dialogue_advance"]
+[connection signal="dialogue_advance" from="." to="MarginContainer/Sounds" method="_on_dialogue_advance"]
+[connection signal="display_options" from="." to="MarginContainer/NT_Container" method="_on_display_options"]
+[connection signal="display_options" from="." to="MarginContainer/Background Panel" method="_on_display_options"]
+[connection signal="display_options" from="." to="MarginContainer/Background Panel/Dialogue" method="_on_display_options"]
+[connection signal="display_options" from="." to="MarginContainer/Background Panel/Options List" method="_on_display_options"]
+[connection signal="display_options" from="." to="MarginContainer/Sounds" method="_on_display_options"]
+[connection signal="display_text" from="." to="MarginContainer/NT_Container" method="_on_display_text"]
+[connection signal="display_text" from="." to="MarginContainer/Background Panel" method="_on_display_text"]
+[connection signal="display_text" from="." to="MarginContainer/Background Panel/Dialogue" method="_on_display_text"]
+[connection signal="display_text" from="." to="MarginContainer/Background Panel/Options List" method="_on_display_text"]
+[connection signal="on_dialogue_close" from="." to="MarginContainer/Sounds" method="_on_dialogue_close"]
+[connection signal="option_change" from="." to="MarginContainer/Background Panel/Options List" method="_on_option_change"]
+[connection signal="option_change" from="." to="MarginContainer/Sounds" method="_on_option_change"]
+[connection signal="option_select" from="." to="MarginContainer/Sounds" method="_on_option_select"]
+[connection signal="scroll_text" from="." to="MarginContainer/Background Panel/Dialogue" method="_on_scroll_text"]
+[connection signal="scroll_text_fast" from="." to="MarginContainer/Background Panel/Dialogue" method="_on_scroll_text_fast"]
+[connection signal="dialogue_scrolled" from="MarginContainer/Background Panel/Dialogue" to="." method="_on_dialogue_scrolled"]
+[connection signal="scroll_sound" from="MarginContainer/Background Panel/Dialogue" to="MarginContainer/Sounds" method="_trigger_scroll_sound"]

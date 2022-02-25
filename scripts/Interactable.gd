@@ -12,7 +12,6 @@ export(String, FILE, "*.txt") var dialogue_filename : String
 const INTERACTION_COLLISION_LAYER = 2
 
 onready var root = get_tree().get_root()
-onready var dialogue_system = $"/root".get_child(root.get_child_count() - 1).get_node("CanvasLayer/Dialogue System")
 
 func _ready():
 	collision_layer = INTERACTION_COLLISION_LAYER;
@@ -41,4 +40,4 @@ func check_file_existence() -> bool:
 
 func queue_dialogue():
 	if(check_file_existence()):
-		dialogue_system.read_from_file_path(dialogue_filename)
+		DialogueSystem.read_from_file_path(dialogue_filename)
