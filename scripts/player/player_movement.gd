@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 # speed at which the player moves. Try changing it for different results!
-const SPEED = 90
+const SPEED = 60
+const PUSH_SPEED = 15
 
 # avoid modifying these
 const RAYCAST_LENGTH = 4
@@ -20,14 +21,16 @@ signal debug_rays(origins, hits, direction)
 onready var root = get_tree().get_root()
 # onready var dialogue_system = $"/root".get_child(root.get_child_count() - 1).get_node("CanvasLayer/Dialogue System")
 
-enum PlayerState {SCENETRANSITION, DIALOGUE, IDLE, MOVE}
+enum PlayerState {SCENETRANSITION, DIALOGUE, IDLE, MOVE, PUSHPULL}
 
 onready var _player_state_machine = PlayerState.IDLE
 
 onready var direction : Vector2 = Vector2(0, 1)
 onready var input: Vector2 = Vector2()
+onready var pushObject: KinematicBody2D = null
 
-signal on_move(state, direction)
+
+signal on_move(state, direction, input)
 
 func _ready():
 	pass
@@ -44,7 +47,7 @@ func _on_dialogue_close():
 	interactor.enabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
+func _physics_process(delta):
 	match _player_state_machine:
 		PlayerState.IDLE:
 			read_input()
@@ -52,9 +55,18 @@ func _physics_process(_delta):
 		PlayerState.MOVE:
 			read_input()
 			move()
+		PlayerState.PUSHPULL:
+			read_input()
+			if(isCardinal(input) && abs(input.x) == abs(direction.x)):
+				move_and_slide(input * PUSH_SPEED)
+				pushObject.move_and_slide(input * PUSH_SPEED)
+			
+			if(!Input.is_action_pressed("grab")):
+				stop_pushing()
+		
 		PlayerState.SCENETRANSITION:
 			move()
-	emit_signal("on_move", _player_state_machine, direction)
+	emit_signal("on_move", _player_state_machine, direction, input)
 
 	#if 'R' pressed, return to real world
 	if Input.is_action_just_pressed("wake_up"):
@@ -88,6 +100,22 @@ func read_input() -> void:
 	
 	# note: zero vector remains unchanged
 	input = input.normalized()
+
+func start_pushing(object) -> void:
+	pushObject = object
+	set_state(PlayerState.PUSHPULL)
+
+func stop_pushing() -> void:
+	# round position
+	var p = pushObject.position
+	p.x = round(p.x)
+	p.y = round(p.y)
+	pushObject.position = p
+	
+	# detach
+	pushObject = null
+	
+	set_state(PlayerState.IDLE)
 
 func move() -> void: 
 	if _player_state_machine == PlayerState.IDLE || _player_state_machine == PlayerState.MOVE:
@@ -154,12 +182,12 @@ func squeezeIntoSpace() -> void:
 		emit_signal("debug_rays", origins, hits, ray_direction)
 	
 	# player got caught on something on positve side, move negative
-	if(positiveCastResult && !negativeCastResult):	
+	if(!centerCastResult && positiveCastResult && !negativeCastResult):	
 		# warning-ignore:return_value_discarded
 		move_and_slide(-SQUEEZE_SPEED * Vector2(abs(input.y), abs(input.x)))
 		
 	
 	# player got caught on something on negative side, move positive
-	if(negativeCastResult && !positiveCastResult):
+	if(!centerCastResult && negativeCastResult && !positiveCastResult):
 		# warning-ignore:return_value_discarded
 		move_and_slide(SQUEEZE_SPEED * Vector2(abs(input.y), abs(input.x)))
