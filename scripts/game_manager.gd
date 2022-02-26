@@ -33,19 +33,22 @@ func on_item_picked_up(type):
 #our function for switching scenes
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
+
+func respawn_to_bed():
 	if !dream_flag:
-		call_deferred("respawn_to_bed")
+		call_deferred("_deferred_respawn_to_bed")
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
 	current_scene.free()
 
 	# Load the new scene.
+	print(path)
 	var s = ResourceLoader.load(path)
 
 	# Instance the new scene.
 
-	#if it crashes you forgot to set .tscn for move_to export var
+	#if it crashes here you forgot to set .tscn for move_to export var
 	current_scene = s.instance()
 
 	# Add it to the active scene, as child of root.
@@ -54,6 +57,6 @@ func _deferred_goto_scene(path):
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
 
-func respawn_to_bed():
+func _deferred_respawn_to_bed():
 	var player = get_tree().get_current_scene().find_node("Player")
 	player.global_position = GameManager.wake_up_global_pos

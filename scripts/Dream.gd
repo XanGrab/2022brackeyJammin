@@ -11,7 +11,7 @@ export(String, FILE) var move_to
 func _ready():
 	pass # Replace with function body.
 
-func _input(event):
+func _input(_event):
 	if move_to != null :
 		if Input.is_action_just_pressed("wake_up"):
 			GameManager.goto_scene(move_to)

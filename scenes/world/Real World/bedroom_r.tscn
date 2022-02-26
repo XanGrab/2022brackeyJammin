@@ -33,7 +33,8 @@ move_to = "res://scenes/world/Real World/hallway_r.tscn"
 [node name="Bed" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 121, 36 )
 z_index = 1
-move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
+move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
+respawn = 1
 
 [node name="Item" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 0, -24 )

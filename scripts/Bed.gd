@@ -22,4 +22,5 @@ func _on_Area2D_body_entered(body):
 				GameManager.wake_up_global_pos.x += sprite.texture.get_width() / 1.5
 			Side.LEFT:
 				GameManager.wake_up_global_pos.x -= sprite.texture.get_width() / 1.5
+		#change scenes
 		GameManager.goto_scene(move_to)

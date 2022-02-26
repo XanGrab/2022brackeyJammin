@@ -74,8 +74,11 @@ func _physics_process(_delta):
 		GameManager.dream_flag = false
 		#switch scenes to stored bed scene
 		GameManager.goto_scene(GameManager.bed_return_scene)
-		#remove store bed scene for next potential one
+		#
+		GameManager.respawn_to_bed()
+		#remove stored bed scene for next potential one
 		GameManager.bed_return_scene = null
+		
 	
 	
 		
