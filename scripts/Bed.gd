@@ -6,5 +6,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
-	if(body.name == "Player"):
-		GameManager.goto_scene(move_to)
+	if move_to != null:
+		if(body.name == "Player"):
+			GameManager.goto_scene(move_to)

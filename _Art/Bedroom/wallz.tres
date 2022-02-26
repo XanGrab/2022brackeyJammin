@@ -1,6 +1,5 @@
-[gd_resource type="TileSet" load_steps=7 format=2]
+[gd_resource type="TileSet" load_steps=6 format=2]
 
-[ext_resource path="res://_Art/Bedroom/Bedroom Environment Tiles.png" type="Texture" id=1]
 [ext_resource path="res://_Art/Dream Hub/Tall Walls Dream fixed.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -17,20 +16,6 @@ segments = PoolVector2Array( 0, 148, 48, 148, 48, 148, 48, 184, 48, 184, 16, 184
 
 [resource]
 resource_local_to_scene = true
-1/name = "Floor"
-1/texture = ExtResource( 1 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 352, 464, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
 2/name = "Tall Walls Dream fixed.png 2"
 2/texture = ExtResource( 2 )
 2/tex_offset = Vector2( 0, -120 )

@@ -12,8 +12,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _input(event):
-	if Input.is_action_just_pressed("wake_up"):
-		GameManager.goto_scene(move_to)
+	if move_to != null :
+		if Input.is_action_just_pressed("wake_up"):
+			GameManager.goto_scene(move_to)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
