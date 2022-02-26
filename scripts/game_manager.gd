@@ -5,12 +5,21 @@ enum Item {KEY, BRACELET, BADGE}
 #inventory
 #0-key, 1-bracelet, 2-badge
 var inventory_flags = [false, false, false]
+var dream_flag = false
 
+#What does this do again lol
 var current_scene = null
+
+#store which scene we went to sleep in
+var bed_return_scene = null
+#store wake up position in relation to bed
+var wake_up_global_pos = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#get root
 	var root = get_tree().get_root()
+	#set current to current scene
 	current_scene = root.get_child(root.get_child_count() - 1)
 	
 # warning-ignore:return_value_discarded
@@ -21,10 +30,11 @@ func on_item_picked_up(type):
 	inventory_flags[type] = true
 
 
-
+#our function for switching scenes
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
-
+	if !dream_flag:
+		call_deferred("respawn_to_bed")
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
@@ -43,3 +53,7 @@ func _deferred_goto_scene(path):
 
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
+
+func respawn_to_bed():
+	var player = get_tree().get_current_scene().find_node("Player")
+	player.global_position = GameManager.wake_up_global_pos
