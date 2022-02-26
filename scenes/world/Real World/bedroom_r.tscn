@@ -17,13 +17,13 @@ collision_use_kinematic = true
 format = 1
 tile_data = PoolIntArray( -131077, 1, 0, -131076, 1, 0, -131075, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -65541, 1, 0, -65540, 1, 0, -65539, 1, 0, -65538, 1, 0, -65537, 1, 0, -131072, 1, 0, -131071, 1, 0, -131070, 1, 0, -131069, 1, 0, -131068, 1, 0, -5, 1, 0, -4, 1, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 1.452, 0 )
+current = true
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-position = Vector2( -40, 21 )
-current = true
 
 [node name="Door" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 28, -44 )
@@ -55,7 +55,3 @@ texture = ExtResource( 2 )
 position = Vector2( 0, -40 )
 scale = Vector2( 2, 1.5 )
 move_to = "res://scenes/world/Real World/hallway_r.tscn"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 1.452, 0 )
-current = true
