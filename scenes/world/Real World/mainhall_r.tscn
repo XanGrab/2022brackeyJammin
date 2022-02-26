@@ -20,6 +20,7 @@ tile_data = PoolIntArray( -196614, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 0, -42 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 0, -72 )
@@ -28,10 +29,11 @@ z_index = 1
 move_to = "res://scenes/world/Real World/hallway_r.tscn"
 
 [node name="ClosetDoor" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 172, 8 )
+position = Vector2( 96, -72 )
 rotation = 3.14159
 scale = Vector2( 2, -1.5 )
-move_to = "res://scenes/world/Real World/hallway_r.tscn"
+z_index = 1
+move_to = "res://scenes/world/Real World/closet_r.tscn"
 
 [node name="CafeDoor" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 172, 8 )
@@ -41,7 +43,7 @@ move_to = "res://scenes/world/Real World/hallway_r.tscn"
 [node name="ClassDoor" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -168, 8 )
 scale = Vector2( 2, 1.5 )
-move_to = "res://scenes/world/Real World/hallway_r.tscn"
+move_to = "res://scenes/world/Real World/class_r.tscn"
 
 [node name="Wall (TileMap)" type="TileMap" parent="."]
 position = Vector2( 2, 19 )
