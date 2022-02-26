@@ -34,5 +34,5 @@ loaded_texture = ExtResource( 9 )
 visible = false
 
 [node name="Bed" parent="." instance=ExtResource( 2 )]
-position = Vector2( -134, 15 )
+position = Vector2( 1, -42 )
 move_to = "res://scenes/test scene/Dream.tscn"

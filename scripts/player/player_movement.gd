@@ -9,8 +9,6 @@ const RAYCAST_LENGTH = 4
 const RAYCAST_LEEWAY = 1
 const SQUEEZE_SPEED = 40
 
-#Make sure move_to is set to a .tscn!!
-export(String, FILE) var move_to
 
 onready var shapeNode : CollisionShape2D = $"CollisionShape2D"
 onready var interactor : RayCast2D = $"InteractRay"
@@ -45,7 +43,7 @@ func _ready():
 	DialogueSystem.connect("on_dialogue_close", self, "_on_dialogue_close")
 	# warning-ignore:return_value_discarded
 	DialogueSystem.connect("on_dialogue_open", self, "_on_dialogue_open")
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	match _player_state_machine:
@@ -71,9 +69,16 @@ func _physics_process(_delta):
 	emit_signal("on_move", _player_state_machine, direction, input)
 
 	#if 'R' pressed, return to real world
-	if Input.is_action_just_pressed("wake_up"):
-		#if it crashes here, you forgot to set a .tscn in the export var
-		GameManager.goto_scene(move_to)
+	if GameManager.dream_flag and Input.is_action_just_pressed("wake_up"):
+		#change flag to real world
+		GameManager.dream_flag = false
+		#switch scenes to stored bed scene
+		GameManager.goto_scene(GameManager.bed_return_scene)
+		#remove store bed scene for next potential one
+		GameManager.bed_return_scene = null
+	
+	
+		
 		
 func _input(event):
 	match _player_state_machine:

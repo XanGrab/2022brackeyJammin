@@ -6,10 +6,96 @@
 [ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=4]
 [ext_resource path="res://_Art/Bedroom/floor.tres" type="TileSet" id=5]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/Dream.gd" type="Script" id=7]
+[ext_resource path="res://_Art/Items/feather.png" type="Texture" id=7]
+[ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/modular scenes/Characters/Oldman.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 64, 144, 0, 144, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 48, 144, 0, 144, 0, 0, 48, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 48, 144, 0, 144, 0, 0, 48, 0 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "Tall Walls Dream fixed.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 80, 567, 64, 144 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Tall Walls Dream fixed.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 144, 567, 48, 144 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Tall Walls Dream fixed.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 192, 567, 48, 144 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 4 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -100 )
+current = true
+
+[node name="Wall (TileMap)" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1310740, 0, 0, -1310736, 1, 0, -1310735, 1, 0, -1310734, 1, 0, -1310733, 1, 0, -1310732, 1, 0, -1310731, 1, 0, -1310730, 1, 0, -1310729, 1, 0, -1310728, 1, 0, -1310727, 1, 0, -1310726, 1, 0, -1310725, 1, 0, -1310724, 1, 0, -1310723, 1, 0, -1310722, 1, 0, -1310721, 1, 0, -1376254, 1, 0, -1376253, 1, 0, -1376252, 1, 0, -1376251, 1, 0, -1376248, 1, 0, -1376247, 1, 0, -1376246, 1, 0, -1376245, 1, 0, -1376244, 1, 0, -1376243, 1, 0, -1376241, 1, 0, -1376239, 2, 0 )
 
 [node name="Floor (TileMap)" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
