@@ -35,6 +35,7 @@ shader_param/palette = SubResource( 3 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 current = true
 
 [node name="YSort" type="YSort" parent="."]
@@ -105,55 +106,55 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -3, -43 )
+position = Vector2( -58, -54 )
 
 [node name="Block" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 24, 43 )
+position = Vector2( 77, 77 )
 
 [node name="Block6" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 25, -7 )
+position = Vector2( 132, -69 )
 
 [node name="Block2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -38, 45 )
+position = Vector2( -23, 31 )
 
 [node name="Block7" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -19, 45 )
+position = Vector2( 23, 78 )
 
 [node name="Block5" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -40, 17 )
+position = Vector2( 0, 78 )
 
 [node name="Block3" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -66, 15 )
+position = Vector2( -1, 54 )
 
 [node name="Block4" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 1, 17 )
+position = Vector2( 76, 52 )
 
 [node name="Block8" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 25, 18 )
+position = Vector2( -73, 54 )
 
 [node name="Block9" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -36, 73 )
+position = Vector2( -62, -6 )
 
 [node name="Block10" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 40, 72 )
+position = Vector2( -72, 79 )
 
 [node name="Block11" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 40, 95 )
+position = Vector2( 22, 31 )
 
 [node name="Block12" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -39, -19 )
+position = Vector2( -40, -27 )
 
 [node name="Block13" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 12, 68 )
+position = Vector2( 40, -30 )
 
 [node name="Block15" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -24, 95 )
+position = Vector2( -22, 78 )
 
 [node name="Block14" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 68, -6 )
+position = Vector2( 56, -9 )
 
 [node name="Block16" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -12, 66 )
+position = Vector2( -1, 31 )
 
 [node name="DoorToNexus" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 0, -72 )
@@ -162,11 +163,11 @@ z_index = 2
 move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
 door_to_name = "DoorToChamber1"
 
-[node name="DoorToNexus2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -6, 84 )
+[node name="DoorToFire2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -1, 11 )
 scale = Vector2( 2, 1.5 )
 z_index = 2
-move_to = "res://scenes/world/Dream World/chamber2_d.tscn"
+move_to = "res://scenes/world/Dream World/fire2_d.tscn"
 door_to_name = "DoorToNexus"
 current_spawn_side = 1
 
@@ -182,9 +183,9 @@ tile_set = ExtResource( 9 )
 cell_size = Vector2( 32, 32 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( -393226, 4, 1, -393225, 4, 196610, -393224, 4, 196610, -393223, 4, 196610, -393222, 4, 5, -393221, 4, 10, -393220, 4, 10, -393219, 4, 10, -393218, 4, 10, -393217, 4, 10, -458752, 4, 10, -458751, 4, 10, -458750, 4, 10, -458749, 4, 10, -458748, 4, 6, -458747, 4, 196610, -458746, 4, 196610, -458745, 4, 196610, -458744, 4, 196610, -458743, 4, 3, -327690, 4, 65536, -327686, 4, 131076, -327685, 4, 196617, -327684, 4, 196617, -327683, 4, 196617, -327682, 4, 196618, -327681, 4, 196617, -393216, 4, 196617, -393215, 4, 196617, -393214, 4, 196617, -393213, 4, 196617, -393212, 4, 131079, -393207, 4, 65536, -262154, 4, 65536, -262150, 4, 65536, -262146, 4, 65536, -327676, 4, 65536, -327671, 4, 65536, -196618, 4, 65536, -196616, 4, 1, -196615, 4, 196610, -196614, 4, 131074, -196613, 4, 196610, -196612, 4, 196610, -196611, 4, 196610, -196610, 4, 131075, -262140, 4, 131073, -262139, 4, 196610, -262138, 4, 3, -262135, 4, 65536, -131082, 4, 65536, -131080, 4, 65536, -196602, 4, 131073, -196601, 4, 3, -196599, 4, 65536, -65546, 4, 65536, -65544, 4, 65536, -131065, 4, 65536, -131063, 4, 65536, -10, 4, 65536, -8, 4, 131073, -7, 4, 196610, -6, 4, 3, -65529, 4, 65536, -65527, 4, 65536, 65526, 4, 65536, 65530, 4, 65536, 4, 4, 1, 5, 4, 196610, 6, 4, 196610, 7, 4, 131075, 9, 4, 65536, 131062, 4, 65536, 131066, 4, 65536, 131068, 4, 196608, 131071, 4, 1, 65536, 4, 196611, 65540, 4, 65536, 65545, 4, 65536, 196598, 4, 65536, 196602, 4, 65536, 196607, 4, 131072, 131075, 4, 8, 131076, 4, 65543, 131081, 4, 65536, 262134, 4, 65536, 262138, 4, 131073, 262139, 4, 196610, 262140, 4, 3, 262142, 4, 0, 196609, 4, 196608, 196611, 4, 65544, 196612, 4, 131083, 196617, 4, 65536, 327670, 4, 131072, 327676, 4, 65536, 262147, 4, 131076, 262148, 4, 196619, 262153, 4, 131072, 393212, 4, 131073, 393213, 4, 3, 327683, 4, 65536, 458749, 4, 65540, 458750, 4, 10, 458751, 4, 10, 393216, 4, 10, 393217, 4, 10, 393218, 4, 10, 393219, 4, 65543, 524285, 4, 196616, 524286, 4, 196617, 524287, 4, 196617, 458752, 4, 196617, 458753, 4, 196617, 458754, 4, 196617, 458755, 4, 196619 )
+tile_data = PoolIntArray( -393227, 4, 8, -393226, 4, 6, -393225, 4, 196610, -393224, 4, 196610, -393223, 4, 196610, -393222, 4, 196610, -393221, 4, 196610, -393220, 4, 196610, -393219, 4, 196610, -393218, 4, 5, -393217, 4, 10, -458752, 4, 10, -458751, 4, 6, -458750, 4, 196610, -458749, 4, 196610, -458748, 4, 196610, -458747, 4, 196610, -458746, 4, 196610, -458745, 4, 196610, -458744, 4, 196610, -458743, 4, 5, -458742, 4, 11, -327691, 4, 65544, -327690, 4, 131083, -327682, 4, 196616, -327681, 4, 196617, -393216, 4, 196617, -393215, 4, 196619, -393207, 4, 65544, -393206, 4, 131083, -262155, 4, 65544, -262154, 4, 131083, -327671, 4, 65544, -327670, 4, 131083, -196619, 4, 65544, -196618, 4, 131083, -262135, 4, 65544, -262134, 4, 131083, -131083, 4, 65544, -131082, 4, 131083, -131074, 4, 8, -131073, 4, 10, -196608, 4, 10, -196607, 4, 11, -196599, 4, 65544, -196598, 4, 131083, -65547, 4, 65544, -65546, 4, 131083, -65538, 4, 65544, -65537, 4, 131081, -131072, 4, 131081, -131071, 4, 131083, -131063, 4, 65544, -131062, 4, 131083, -11, 4, 65544, -10, 4, 131083, -3, 4, 1, -2, 4, 196613, -1, 4, 196617, -65536, 4, 196617, -65535, 4, 196614, -65534, 4, 3, -65527, 4, 65544, -65526, 4, 131083, 65525, 4, 65544, 65526, 4, 131083, 65532, 4, 8, 65533, 4, 65543, 2, 4, 65540, 3, 4, 11, 9, 4, 65544, 10, 4, 131083, 131061, 4, 65544, 131062, 4, 131083, 131068, 4, 196616, 131069, 4, 196619, 65538, 4, 196616, 65539, 4, 196619, 65545, 4, 65544, 65546, 4, 131083, 196597, 4, 65544, 196598, 4, 131083, 131081, 4, 65544, 131082, 4, 131083, 262133, 4, 65544, 262134, 4, 131083, 262140, 4, 196609, 262141, 4, 196611, 196610, 4, 196609, 196611, 4, 196611, 196617, 4, 65544, 196618, 4, 131083, 327669, 4, 196616, 327670, 4, 131079, 262153, 4, 131076, 262154, 4, 196619, 393206, 4, 131073, 393207, 4, 196610, 393208, 4, 196610, 393209, 4, 196610, 393210, 4, 5, 393211, 4, 11, 327684, 4, 8, 327685, 4, 6, 327686, 4, 196610, 327687, 4, 196610, 327688, 4, 196610, 327689, 4, 131075, 458746, 4, 196616, 458747, 4, 196614, 458748, 4, 196610, 458749, 4, 196610, 458750, 4, 196610, 458751, 4, 196610, 393216, 4, 196610, 393217, 4, 196610, 393218, 4, 196610, 393219, 4, 196610, 393220, 4, 196613, 393221, 4, 196619 )
 
 [node name="Item" parent="." instance=ExtResource( 7 )]
-position = Vector2( 18, -40 )
+position = Vector2( 73, -52 )
 type = 1
 loaded_texture = ExtResource( 8 )
