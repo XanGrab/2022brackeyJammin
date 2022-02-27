@@ -20,6 +20,7 @@ Debug="*res://scripts/Debug.gd"
 SignalBus="*res://scripts/signal_bus.gd"
 GameManager="*res://scripts/game_manager.gd"
 DialogueSystem="*res://scenes/modular scenes/Dialogue System.tscn"
+NpcManager="*res://scripts/Interactables/ npc_manager.gd"
 
 [display]
 
