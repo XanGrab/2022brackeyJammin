@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

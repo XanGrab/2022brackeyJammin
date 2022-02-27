@@ -38,6 +38,8 @@ func on_item_picked_up(type):
 #our function for switching scenes
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
+
+func spawn_to_door():	
 	call_deferred("_deferred_spawn")
 
 func respawn_to_bed():

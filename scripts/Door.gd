@@ -16,4 +16,4 @@ func _on_Area2D_body_entered(body):
 		if body.name == "Player" && GameManager.inventory_flags[key]:
 			GameManager.door_to = door_to_name
 			GameManager.goto_scene(move_to)
-			
+			GameManager.spawn_to_door()
