@@ -55,6 +55,6 @@ text = "CREDITS"
 script = ExtResource( 3 )
 scene_to_load = "res://scenes/UI/Credits.tscn"
 
-[connection signal="pressed" from="Menu/Buttons/PlayButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu/Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Menu/Buttons/PlayButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu/Buttons/CreditButton" to="." method="_on_CreditButton_pressed"]

@@ -22,13 +22,19 @@ tile_data = PoolIntArray( -131077, 1, 0, -131076, 1, 0, -131075, 1, 0, -131074, 
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 0, 8 )
-
 [node name="Bed" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 120, 0 )
 z_index = 1
 script = null
+
+[node name="NexusDoor" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 0, -40 )
+scale = Vector2( 2, 1.5 )
+move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
+door_to_name = "DoorToBed"
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 0, 8 )
 
 [node name="Wall (TileMap)" type="TileMap" parent="YSort"]
 scale = Vector2( 0.5, 0.5 )
@@ -43,12 +49,6 @@ position = Vector2( -56, -32 )
 
 [node name="Oldman" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 56, -16 )
-
-[node name="NexusDoor" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, -40 )
-scale = Vector2( 2, 1.5 )
-move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
-door_to_name = "DoorToBed"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 1.452, 0 )
