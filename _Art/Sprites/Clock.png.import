@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Real World Door Trim.png-d434886feadaa91d87e912468bfbb780.stex"
+path="res://.import/Clock.png-bb0c529fe03cd9a9dc8b0b92100d5e58.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Art/Bedroom/Real World Door Trim.png"
-dest_files=[ "res://.import/Real World Door Trim.png-d434886feadaa91d87e912468bfbb780.stex" ]
+source_file="res://_Art/Sprites/Clock.png"
+dest_files=[ "res://.import/Clock.png-bb0c529fe03cd9a9dc8b0b92100d5e58.stex" ]
 
 [params]
 
