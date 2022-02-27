@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://_Art/Bedroom/wallz.tres" type="TileSet" id=1]
+[ext_resource path="res://Tilemap Resources/wallz.tres" type="TileSet" id=1]
 [ext_resource path="res://_Art/Bedroom/MC_Comp.png" type="Texture" id=2]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=4]
