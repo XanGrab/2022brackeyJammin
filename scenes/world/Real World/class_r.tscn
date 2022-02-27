@@ -2,7 +2,7 @@
 
 [ext_resource path="res://_Art/Bedroom/wallz.tres" type="TileSet" id=1]
 [ext_resource path="res://_Art/Bedroom/floor.tres" type="TileSet" id=2]
-[ext_resource path="res://_Art/Bedroom/MC_Comp.png" type="Texture" id=3]
+[ext_resource path="res://scenes/modular scenes/McComp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=5]
 
@@ -31,65 +31,53 @@ move_to = "res://scenes/world/Real World/mainhall_r.tscn"
 door_to_name = "ClassDoor"
 current_spawn_side = 2
 
-[node name="McComp" type="Sprite" parent="YSort"]
-position = Vector2( -248, -64 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -103, -40 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp2" type="Sprite" parent="YSort"]
-position = Vector2( -248, -32 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -55, -40 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp3" type="Sprite" parent="YSort"]
-position = Vector2( -248, 0 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -104, -9 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp4" type="Sprite" parent="YSort"]
-position = Vector2( -200, 0 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -55, -9 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp5" type="Sprite" parent="YSort"]
-position = Vector2( -200, -32 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp5" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -104, 22 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp6" type="Sprite" parent="YSort"]
-position = Vector2( -200, -64 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp6" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -55, 22 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp7" type="Sprite" parent="YSort"]
-position = Vector2( -112, -64 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp7" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 48, -40 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp8" type="Sprite" parent="YSort"]
-position = Vector2( -112, -32 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp8" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 96, -40 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp9" type="Sprite" parent="YSort"]
-position = Vector2( -112, 0 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp9" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 48, -10 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp10" type="Sprite" parent="YSort"]
-position = Vector2( -64, 0 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp10" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 96, -11 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp11" type="Sprite" parent="YSort"]
-position = Vector2( -64, -32 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp11" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 48, 21 )
+scale = Vector2( 0.997356, 1 )
 
-[node name="McComp12" type="Sprite" parent="YSort"]
-position = Vector2( -64, -64 )
-texture = ExtResource( 3 )
-offset = Vector2( 152, 16 )
+[node name="McComp12" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 96, 21 )
+scale = Vector2( 0.997356, 1 )
 
 [node name="Wall (TileMap)" type="TileMap" parent="."]
 position = Vector2( 2, 19 )
