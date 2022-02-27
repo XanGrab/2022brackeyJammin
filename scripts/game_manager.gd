@@ -1,11 +1,14 @@
 extends Node
 
-enum Item {KEY, BRACELET, BADGE}
+enum Item {KEY, BRACELET, BADGE, LEMON}
 
 #inventory
 #0-key, 1-bracelet, 2-badge
-var inventory_flags = [false, false, false]
+var inventory_flags = [false, false, false, false]
 var dream_flag = true
+
+# stores which rooms have been entered
+var rooms_entered = {}
 
 #What does this do again lol
 var current_scene = null
@@ -41,6 +44,10 @@ func on_item_picked_up(type):
 
 #our function for switching scenes
 func goto_scene(path):
+	if(!rooms_entered.has(path)):
+		SignalBus.emit_signal("on_new_scene_entered", path)
+	
+	rooms_entered[path] = true
 	call_deferred("_deferred_goto_scene", path)
 
 func spawn_to_door():	
@@ -55,7 +62,6 @@ func _deferred_goto_scene(path):
 	current_scene.free()
 
 	# Load the new scene.
-	print(path)
 	var s = ResourceLoader.load(path)
 
 	# Instance the new scene.
