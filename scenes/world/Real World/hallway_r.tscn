@@ -41,12 +41,12 @@ script = null
 position = Vector2( 105, 5 )
 
 [node name="DoorToMain" parent="." instance=ExtResource( 4 )]
-position = Vector2( -152, 48 )
+position = Vector2( -152, 55 )
 scale = Vector2( 2, 1.5 )
 z_index = 1
 move_to = "res://scenes/world/Real World/mainhall_r.tscn"
 door_to_name = "Door"
-current_spawn_side = 3
+current_spawn_side = 2
 
 [node name="DoorToBed" parent="." instance=ExtResource( 4 )]
 position = Vector2( 154, 13 )

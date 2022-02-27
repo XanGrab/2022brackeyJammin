@@ -27,6 +27,7 @@ position = Vector2( 0, -72 )
 scale = Vector2( 2, 1.5 )
 z_index = 1
 move_to = "res://scenes/world/Real World/hallway_r.tscn"
+door_to_name = "DoorToMain"
 
 [node name="ClosetDoor" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 96, -72 )
@@ -34,11 +35,14 @@ rotation = 3.14159
 scale = Vector2( 2, -1.5 )
 z_index = 1
 move_to = "res://scenes/world/Real World/closet_r.tscn"
+door_to_name = "Door"
 
 [node name="CafeDoor" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 172, 8 )
 scale = Vector2( -2, 1.5 )
-move_to = "res://scenes/world/Real World/hallway_r.tscn"
+move_to = "res://scenes/world/Real World/cafeteria_r.tscn"
+door_to_name = "DoorToMain"
+current_spawn_side = 2
 
 [node name="ClassDoor" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -168, 8 )

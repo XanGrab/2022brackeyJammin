@@ -20,12 +20,14 @@ tile_data = PoolIntArray( -196614, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 0, 59 )
+position = Vector2( 0, 46 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 0, 84 )
+position = Vector2( 1, 81 )
 scale = Vector2( 2, 1 )
 move_to = "res://scenes/world/Real World/mainhall_r.tscn"
+door_to_name = "ClosetDoor"
+current_spawn_side = 1
 
 [node name="Wall (TileMap)" type="TileMap" parent="."]
 position = Vector2( 2, 19 )
