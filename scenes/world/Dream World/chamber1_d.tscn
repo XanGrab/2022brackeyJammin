@@ -39,9 +39,6 @@ current = true
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 0, -21 )
-
 [node name="Floor" type="ColorRect" parent="YSort"]
 margin_left = -160.0
 margin_top = -96.0
@@ -107,6 +104,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Player" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -3, -43 )
+
 [node name="Block" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 24, 43 )
 
@@ -166,8 +166,8 @@ door_to_name = "DoorToChamber1"
 position = Vector2( -6, 84 )
 scale = Vector2( 2, 1.5 )
 z_index = 2
-move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
-door_to_name = "DoorToChamber1"
+move_to = "res://scenes/world/Dream World/chamber2_d.tscn"
+door_to_name = "DoorToNexus"
 current_spawn_side = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

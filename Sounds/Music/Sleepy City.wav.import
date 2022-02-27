@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sleepy City.wav-30f5882e29a25f9714f663f73926c88a.sample"
+
+[deps]
+
+source_file="res://Sounds/Music/Sleepy City.wav"
+dest_files=[ "res://.import/Sleepy City.wav-30f5882e29a25f9714f663f73926c88a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
