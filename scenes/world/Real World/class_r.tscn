@@ -42,7 +42,7 @@ current_spawn_side = 2
 
 [node name="Desk" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 0, -50 )
-move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
+move_to = "res://scenes/world/Dream World/fire2_d.tscn"
 respawn = 2
 
 [node name="McComp" parent="YSort" instance=ExtResource( 3 )]

@@ -19,6 +19,9 @@ var wake_up_global_pos = null
 var door_to: String
 var door =  null
 
+#number of eggs collected:
+var egg_index = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#get root
@@ -29,7 +32,7 @@ func _ready():
 	
 # warning-ignore:return_value_discarded
 	SignalBus.connect("item_picked_up", self, "on_item_picked_up")
-	
+	SignalBus.connect("egg_picked_up", self, "on_egg_picked_up")
 
 func on_item_picked_up(type):
 	inventory_flags[type] = true
@@ -75,3 +78,8 @@ func _deferred_spawn():
 	#grab player node and player's position to door spawn 
 	var player = get_tree().get_current_scene().find_node("Player")
 	player.global_position = door.spawn[door.current_spawn_side].global_position
+
+func on_egg_picked_up():
+	egg_index += 1
+	if egg_index == 3:
+		print("you won!")
