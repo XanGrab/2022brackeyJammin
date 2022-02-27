@@ -16,10 +16,18 @@ func _on_interact():
 	
 	if(check_file_existence(filePaths[state])):
 		DialogueSystem.read_from_file_path(filePaths[state])
+	
+	if(npc_name == "vanessa" && state == 1):
+		SignalBus.emit_signal("item_picked_up", GameManager.Item.BADGE)
+		NpcManager.increment_state("vanessa")
+	
+	if(npc_name == "carmella" && state == 1):
+		SignalBus.emit_signal("item_picked_up", GameManager.Item.LEMON)
+		NpcManager.increment_state("carmella")
+	
+	if(npc_name == "josh" && state == 0):
+		SignalBus.emit_signal("item_picked_up", GameManager.Item.BRACELET)
+		NpcManager.increment_state("josh")
 
 func increment_state():
 	NpcManager.increment_state(npc_name)
-	
-func _input(_event):
-	if(Input.is_key_pressed(KEY_2)):
-		increment_state()

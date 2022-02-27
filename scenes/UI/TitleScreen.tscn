@@ -42,7 +42,7 @@ size_flags_vertical = 7
 custom_fonts/font = ExtResource( 1 )
 text = "PLAY"
 script = ExtResource( 3 )
-scene_to_load = "res://scenes/world/Real World/bedroom_r.tscn"
+scene_to_load = "res://scenes/world/Dream World/bedroom_d.tscn"
 
 [node name="CreditButton" type="Button" parent="Menu/Buttons"]
 margin_top = 61.0

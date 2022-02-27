@@ -1,19 +1,23 @@
 extends Node
 
-enum Item {KEY, BRACELET, BADGE}
+enum Item {KEY, BRACELET, BADGE, LEMON}
 
 #inventory
 #0-key, 1-bracelet, 2-badge
-var inventory_flags = [false, false, false]
-var dream_flag = false
+var inventory_flags = [false, false, false, false]
+var dream_flag = true
+
+# stores which rooms have been entered
+var rooms_entered = {}
 
 #What does this do again lol
 var current_scene = null
 
 #store which scene we went to sleep in
-var bed_return_scene = null
+var bed_return_scene = "res://scenes/world/Real World/bedroom_r.tscn"
 #store wake up position in relation to bed
-var wake_up_global_pos = null
+var wake_up_global_pos = Vector2(99.666664, 3)
+
 
 #declare door stuf
 var door_to: String
@@ -40,6 +44,10 @@ func on_item_picked_up(type):
 
 #our function for switching scenes
 func goto_scene(path):
+	if(!rooms_entered.has(path)):
+		SignalBus.emit_signal("on_new_scene_entered", path)
+	
+	rooms_entered[path] = true
 	call_deferred("_deferred_goto_scene", path)
 
 func spawn_to_door():	
@@ -54,7 +62,6 @@ func _deferred_goto_scene(path):
 	current_scene.free()
 
 	# Load the new scene.
-	print(path)
 	var s = ResourceLoader.load(path)
 
 	# Instance the new scene.
@@ -77,9 +84,10 @@ func _deferred_spawn():
 	door = get_tree().get_current_scene().find_node(door_to)
 	#grab player node and player's position to door spawn 
 	var player = get_tree().get_current_scene().find_node("Player")
+	
 	player.global_position = door.spawn[door.current_spawn_side].global_position
 
 func on_egg_picked_up():
 	egg_index += 1
 	if egg_index == 3:
-		print("you won!")
+		goto_scene("res://scenes/UI/End.tscn")
