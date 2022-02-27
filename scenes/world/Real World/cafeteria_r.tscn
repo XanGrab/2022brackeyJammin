@@ -22,10 +22,12 @@ tile_data = PoolIntArray( -196614, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -127, -4 )
 
-[node name="Door" parent="YSort" instance=ExtResource( 4 )]
+[node name="DoorToMain" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -168, 2 )
 scale = Vector2( 2, 1.5 )
 move_to = "res://scenes/world/Real World/mainhall_r.tscn"
+door_to_name = "CafeDoor"
+current_spawn_side = 2
 
 [node name="Wall (TileMap)" type="TileMap" parent="."]
 position = Vector2( 2, 19 )
