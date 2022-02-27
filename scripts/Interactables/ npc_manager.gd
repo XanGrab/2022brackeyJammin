@@ -32,6 +32,8 @@ func get_state(npc_name : String) -> int:
 
 # increases the state of an npc by 1
 func increment_state(npc_name : String) -> void:
+	if(!contains_data(npc_name)):
+		register_npc(npc_name)
 	_npc_state_data[npc_name] += 1
 
 # registers the state of npc in the dict
