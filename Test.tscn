@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://_Art/crest.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Interactables/npc.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 141, 84 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+npc_name = "test"
+filePaths = [ "res://_TextContent/Wise old man/00.txt", "res://_TextContent/Wise old man/01.txt", "res://_TextContent/Wise old man/02.txt" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 0.01, 0.01 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -52, 57 )
