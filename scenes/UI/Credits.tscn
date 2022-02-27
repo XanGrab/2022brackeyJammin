@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/paskowy_font_resource.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/UI/Crest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/dogica_font_resource.tres" type="DynamicFont" id=3]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Team" type="VBoxContainer" parent="."]
+margin_left = 17.0
+margin_top = 1.0
+margin_right = 275.0
+margin_bottom = 184.0
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Team"]
+margin_right = 258.0
+margin_bottom = 53.0
+
+[node name="Label" type="Label" parent="Team/HBoxContainer"]
+margin_right = 228.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+text = "Game Design and Development Club"
+
+[node name="Control" parent="Team/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 232.0
+margin_right = 232.0
+margin_bottom = 53.0
+
+[node name="Names" type="VBoxContainer" parent="Team"]
+margin_top = 55.0
+margin_right = 258.0
+margin_bottom = 184.0
+custom_constants/separation = -9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Xander" type="HBoxContainer" parent="Team/Names"]
+margin_right = 258.0
+margin_bottom = 33.0
+
+[node name="Name" type="Label" parent="Team/Names/Xander"]
+margin_right = 36.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "Xander"
+
+[node name="Role" type="Label" parent="Team/Names/Xander"]
+margin_left = 40.0
+margin_right = 256.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "- Team Lead, Programming, Art, Story"
+
+[node name="Sebio" type="HBoxContainer" parent="Team/Names"]
+margin_top = 24.0
+margin_right = 258.0
+margin_bottom = 57.0
+
+[node name="Name" type="Label" parent="Team/Names/Sebio"]
+margin_right = 42.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "Eusebio"
+
+[node name="Role" type="Label" parent="Team/Names/Sebio"]
+margin_left = 46.0
+margin_right = 76.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "- Art"
+
+[node name="Rishu" type="HBoxContainer" parent="Team/Names"]
+margin_top = 48.0
+margin_right = 258.0
+margin_bottom = 81.0
+
+[node name="Name" type="Label" parent="Team/Names/Rishu"]
+margin_right = 30.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "Rishu"
+
+[node name="Role" type="Label" parent="Team/Names/Rishu"]
+margin_left = 34.0
+margin_right = 142.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "- Programming, Art"
+
+[node name="Jess" type="HBoxContainer" parent="Team/Names"]
+margin_top = 72.0
+margin_right = 258.0
+margin_bottom = 105.0
+
+[node name="Name" type="Label" parent="Team/Names/Jess"]
+margin_right = 24.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "Jess"
+
+[node name="Role" type="Label" parent="Team/Names/Jess"]
+margin_left = 28.0
+margin_right = 106.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 3 )
+text = "- Programming"
+
+[node name="Label" type="Label" parent="Team/Names"]
+margin_top = 96.0
+margin_right = 258.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 3 )
+text = "Click the crest to go back"

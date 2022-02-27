@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/dogica_font_resource.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/paskowy_font_resource.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/PlayButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=4]
+
+[node name="TitleScreen" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 25.0
+margin_top = 1.0
+margin_right = 301.0
+margin_bottom = 180.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
+margin_right = 276.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+text = "Brackey's Jam 2022.1"
+align = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
+margin_top = 63.0
+margin_right = 276.0
+margin_bottom = 163.0
+custom_constants/separation = 22
+
+[node name="PlayButton" type="Button" parent="Menu/Buttons"]
+margin_right = 276.0
+margin_bottom = 39.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "PLAY"
+script = ExtResource( 3 )
+scene_to_load = "res://scenes/world/Real World/bedroom_r.tscn"
+
+[node name="CreditButton" type="Button" parent="Menu/Buttons"]
+margin_top = 61.0
+margin_right = 276.0
+margin_bottom = 100.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "CREDITS"
+script = ExtResource( 3 )
+scene_to_load = "res://scenes/UI/Credits.tscn"
+
+[connection signal="pressed" from="Menu/Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Menu/Buttons/PlayButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Menu/Buttons/CreditButton" to="." method="_on_CreditButton_pressed"]
