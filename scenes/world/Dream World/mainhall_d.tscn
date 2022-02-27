@@ -2,7 +2,7 @@
 
 [ext_resource path="res://_Art/TestBG/Circles.png" type="Texture" id=1]
 [ext_resource path="res://_Shaders/Backgrounds.shader" type="Shader" id=2]
-[ext_resource path="res://_Art/Bedroom/wallz.tres" type="TileSet" id=3]
+[ext_resource path="res://Tilemap Resources/wallz.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=6]
@@ -111,11 +111,12 @@ scale = Vector2( 2, 1.5 )
 z_index = 2
 move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
 
-[node name="Door2" parent="YSort" instance=ExtResource( 4 )]
+[node name="DoorToBed" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 84, 0 )
 scale = Vector2( 2, 2 )
 z_index = 1
-move_to = "res://scenes/test scene/TestLevel.tscn"
+move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
+door_to_name = "NexusDoor"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
