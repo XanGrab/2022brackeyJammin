@@ -17,21 +17,21 @@ func _ready():
 	collision_layer = INTERACTION_COLLISION_LAYER;
 	
 	# warning-ignore:return_value_discarded
-	check_file_existence()
+	check_file_existence(dialogue_filename)
 
 # this method should be overridden if any extra functionality
 # is to be added when interacting with this entity
 func _on_interact() :
 	queue_dialogue()
 
-func check_file_existence() -> bool:
-	if(dialogue_filename == ""):
+func check_file_existence(filename : String) -> bool:
+	if(filename == ""):
 		return false
 	
 	var file_check = File.new()
 	
-	if (!file_check.file_exists(dialogue_filename)):
-		push_error("file \"" + dialogue_filename + "\" does not exist.")
+	if (!file_check.file_exists(filename)):
+		push_warning("file \"" + filename + "\" does not exist.")
 		return false
 	
 	return true
@@ -39,5 +39,5 @@ func check_file_existence() -> bool:
 
 
 func queue_dialogue():
-	if(check_file_existence()):
+	if(check_file_existence(dialogue_filename)):
 		DialogueSystem.read_from_file_path(dialogue_filename)
