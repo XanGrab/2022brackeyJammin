@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tilemap Resources/wallz.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://_Art/Bedroom/floor.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/modular scenes/Characters/Drake.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/modular scenes/Characters/Josh.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -60,3 +62,9 @@ script = null
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 105, 5 )
+
+[node name="Oldman" parent="." instance=ExtResource( 5 )]
+position = Vector2( -99, -24 )
+
+[node name="Oldman2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 94, -28 )
