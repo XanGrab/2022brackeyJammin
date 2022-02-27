@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pushing.wav-c3361ad940ae93cab392d730ac7121de.sample"
+
+[deps]
+
+source_file="res://Sounds/Music/SFX/Pushing.wav"
+dest_files=[ "res://.import/Pushing.wav-c3361ad940ae93cab392d730ac7121de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
