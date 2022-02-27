@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tilemap Resources/wallz.tres" type="TileSet" id=1]
 [ext_resource path="res://_Art/Bedroom/floor.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/modular scenes/McComp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/test scene/Desk.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -30,6 +31,11 @@ scale = Vector2( 2, -1.5 )
 move_to = "res://scenes/world/Real World/mainhall_r.tscn"
 door_to_name = "ClassDoor"
 current_spawn_side = 2
+
+[node name="Desk" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 0, -60 )
+move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
+respawn = 2
 
 [node name="McComp" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -103, -40 )
