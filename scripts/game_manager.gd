@@ -15,12 +15,17 @@ var bed_return_scene = null
 #store wake up position in relation to bed
 var wake_up_global_pos = null
 
+#declare door stuf
+var door_to: String
+var door =  null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#get root
 	var root = get_tree().get_root()
 	#set current to current scene
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
 	
 # warning-ignore:return_value_discarded
 	SignalBus.connect("item_picked_up", self, "on_item_picked_up")
@@ -33,6 +38,7 @@ func on_item_picked_up(type):
 #our function for switching scenes
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
+	call_deferred("_deferred_spawn")
 
 func respawn_to_bed():
 	if !dream_flag:
@@ -60,3 +66,10 @@ func _deferred_goto_scene(path):
 func _deferred_respawn_to_bed():
 	var player = get_tree().get_current_scene().find_node("Player")
 	player.global_position = GameManager.wake_up_global_pos
+
+func _deferred_spawn():
+	#find door node according to its name in door_to
+	door = get_tree().get_current_scene().find_node(door_to)
+	#grab player node and player's position to door spawn 
+	var player = get_tree().get_current_scene().find_node("Player")
+	player.global_position = door.spawn[door.current_spawn_side].global_position

@@ -33,11 +33,11 @@ move_to = "res://scenes/world/Real World/hallway_r.tscn"
 [node name="Bed" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 121, 36 )
 z_index = 1
-move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
+move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
 respawn = 1
 
 [node name="Item" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 0, -24 )
+position = Vector2( -1, -19 )
 z_index = 2
 
 [node name="Wall (TileMap)" type="TileMap" parent="."]
@@ -53,6 +53,7 @@ position = Vector2( -48, -40 )
 texture = ExtResource( 2 )
 
 [node name="HallDoor" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, -40 )
+position = Vector2( 0, -39 )
 scale = Vector2( 2, 1.5 )
 move_to = "res://scenes/world/Real World/hallway_r.tscn"
+door_to_name = "DoorToBed"
