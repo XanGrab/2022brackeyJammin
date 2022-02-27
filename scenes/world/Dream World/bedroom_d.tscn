@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tilemap Resources/wallz.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/modular scenes/Characters/Oldman.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/test scene/Bed.tscn" type="PackedScene" id=4]
 [ext_resource path="res://_Art/Bedroom/floor.tres" type="TileSet" id=5]
@@ -39,6 +40,9 @@ tile_data = PoolIntArray( -327691, 4, 8, -327690, 4, 10, -327689, 4, 10, -327688
 
 [node name="McComp" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -56, -32 )
+
+[node name="Oldman" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 56, -16 )
 
 [node name="NexusDoor" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -40 )
