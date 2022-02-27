@@ -111,11 +111,12 @@ scale = Vector2( 2, 1.5 )
 z_index = 2
 move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
 
-[node name="Door2" parent="YSort" instance=ExtResource( 4 )]
+[node name="DoorToBed" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 84, 0 )
 scale = Vector2( 2, 2 )
 z_index = 1
-move_to = "res://scenes/test scene/TestLevel.tscn"
+move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
+door_to_name = "NexusDoor"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
