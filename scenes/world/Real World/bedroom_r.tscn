@@ -44,7 +44,7 @@ move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
 respawn = 1
 
 [node name="Item" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -53, 22 )
+position = Vector2( 86, 38 )
 z_index = 2
 loaded_texture = ExtResource( 8 )
 
