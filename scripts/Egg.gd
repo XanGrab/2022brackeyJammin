@@ -1,14 +1,11 @@
 extends Node2D
 
-export(GameManager.Item) var type
 export(Texture) var loaded_texture
 
 onready var sprite = $Sprite
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.texture = loaded_texture
-	if GameManager.inventory_flags[type]:
-		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -18,5 +15,5 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if(body.name == "Player"):
-		SignalBus.emit_signal("item_picked_up", type)
+		SignalBus.emit_signal("egg_picked_up")
 		queue_free()

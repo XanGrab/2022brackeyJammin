@@ -22,7 +22,7 @@ tile_data = PoolIntArray( -196614, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 
 
 [node name="Rug" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 0, -7 )
-move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
+move_to = "res://scenes/world/Dream World/fire1_d.tscn"
 respawn = 2
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]

@@ -6,9 +6,9 @@
 [ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/modular scenes/Item.tscn" type="PackedScene" id=7]
-[ext_resource path="res://_Art/Items/Power_Bracelet.png" type="Texture" id=8]
 [ext_resource path="res://Tilemap Resources/wallz.tres" type="TileSet" id=9]
+[ext_resource path="res://scenes/modular scenes/Egg.tscn" type="PackedScene" id=10]
+[ext_resource path="res://_Art/Elements/Egg.png" type="Texture" id=11]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.4975, 1 )
@@ -106,7 +106,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -58, -54 )
+position = Vector2( -50, -56 )
 
 [node name="Block" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 77, 77 )
@@ -154,7 +154,7 @@ position = Vector2( -22, 78 )
 position = Vector2( 56, -9 )
 
 [node name="Block16" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -1, 31 )
+position = Vector2( 0, 30 )
 
 [node name="DoorToNexus" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 0, -72 )
@@ -185,7 +185,6 @@ cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( -393227, 4, 8, -393226, 4, 6, -393225, 4, 196610, -393224, 4, 196610, -393223, 4, 196610, -393222, 4, 196610, -393221, 4, 196610, -393220, 4, 196610, -393219, 4, 196610, -393218, 4, 5, -393217, 4, 10, -458752, 4, 10, -458751, 4, 6, -458750, 4, 196610, -458749, 4, 196610, -458748, 4, 196610, -458747, 4, 196610, -458746, 4, 196610, -458745, 4, 196610, -458744, 4, 196610, -458743, 4, 5, -458742, 4, 11, -327691, 4, 65544, -327690, 4, 131083, -327682, 4, 196616, -327681, 4, 196617, -393216, 4, 196617, -393215, 4, 196619, -393207, 4, 65544, -393206, 4, 131083, -262155, 4, 65544, -262154, 4, 131083, -327671, 4, 65544, -327670, 4, 131083, -196619, 4, 65544, -196618, 4, 131083, -262135, 4, 65544, -262134, 4, 131083, -131083, 4, 65544, -131082, 4, 131083, -131074, 4, 8, -131073, 4, 10, -196608, 4, 10, -196607, 4, 11, -196599, 4, 65544, -196598, 4, 131083, -65547, 4, 65544, -65546, 4, 131083, -65538, 4, 65544, -65537, 4, 131081, -131072, 4, 131081, -131071, 4, 131083, -131063, 4, 65544, -131062, 4, 131083, -11, 4, 65544, -10, 4, 131083, -3, 4, 1, -2, 4, 196613, -1, 4, 196617, -65536, 4, 196617, -65535, 4, 196614, -65534, 4, 3, -65527, 4, 65544, -65526, 4, 131083, 65525, 4, 65544, 65526, 4, 131083, 65532, 4, 8, 65533, 4, 65543, 2, 4, 65540, 3, 4, 11, 9, 4, 65544, 10, 4, 131083, 131061, 4, 65544, 131062, 4, 131083, 131068, 4, 196616, 131069, 4, 196619, 65538, 4, 196616, 65539, 4, 196619, 65545, 4, 65544, 65546, 4, 131083, 196597, 4, 65544, 196598, 4, 131083, 131081, 4, 65544, 131082, 4, 131083, 262133, 4, 65544, 262134, 4, 131083, 262140, 4, 196609, 262141, 4, 196611, 196610, 4, 196609, 196611, 4, 196611, 196617, 4, 65544, 196618, 4, 131083, 327669, 4, 196616, 327670, 4, 131079, 262153, 4, 131076, 262154, 4, 196619, 393206, 4, 131073, 393207, 4, 196610, 393208, 4, 196610, 393209, 4, 196610, 393210, 4, 5, 393211, 4, 11, 327684, 4, 8, 327685, 4, 6, 327686, 4, 196610, 327687, 4, 196610, 327688, 4, 196610, 327689, 4, 131075, 458746, 4, 196616, 458747, 4, 196614, 458748, 4, 196610, 458749, 4, 196610, 458750, 4, 196610, 458751, 4, 196610, 393216, 4, 196610, 393217, 4, 196610, 393218, 4, 196610, 393219, 4, 196610, 393220, 4, 196613, 393221, 4, 196619 )
 
-[node name="Item" parent="." instance=ExtResource( 7 )]
-position = Vector2( 73, -52 )
-type = 1
-loaded_texture = ExtResource( 8 )
+[node name="Egg" parent="." instance=ExtResource( 10 )]
+position = Vector2( 44, -57 )
+loaded_texture = ExtResource( 11 )

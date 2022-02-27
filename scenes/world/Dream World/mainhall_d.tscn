@@ -117,6 +117,7 @@ position = Vector2( 138, 16 )
 scale = Vector2( 2, 2 )
 move_to = "res://scenes/world/Dream World/bedroom_d.tscn"
 door_to_name = "NexusDoor"
+current_spawn_side = 3
 
 [node name="DoorToChamber1" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -154, 16 )
