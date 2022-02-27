@@ -1,0 +1,74 @@
+<Wize old man>	Oh hello! What are you doing here?
+			What am I doing here? I live here silly!
+
+<Wize old man>	The door? 
+Well everyone knows you shouldn’t open doors in a dream silly!
+Well, actually this is a video game. Who am I talking to? Not you!
+Ok well, I want you to try and imagine something called a [switch button].
+(No not you! Do you see any buttons for you to press?)
+Hitting that should allow you to leave this room and wake from your dream.
+Pre-Feature
+In Dream Hub
+
+<Wize old man>	Hello again! This is the Nexus - a highway of the subconscious designed to allow lucid dreamers like yourself to explore the inner machinations of your mind. What does that mean? Idk, you’re an enigma to me. Deep within your mind lie 3 “dream eggs”. What are dream eggs? Well, aren’t u a mouthy one. Legend says that the dreamer who collects all 3 eggs will complete this game…
+Fire Badge
+
+<vanessa> 	You know my dads are a part of the VFD! That stands for Volunteer Fire Department.
+            After a mysterious fire burned down our neighbor’s house, they figured the safest place to leave me was here at Hilltop in the snow.
+            They even gave me this fireman’s badge to keep me safe from fires.
+
+(See’s the fire puzzle)
+
+<vanessa> 	What’s that? You want to borrow my fireman’s badge?
+            Well, I suppose I could lend it to you. You gotta make sure not to lose it though.
+
+(Optional)
+
+<vanessa>  Both my dads have matching hourglasses. What’s an hourglass? Wouldn’t you like to know, weather boy!
+            Lemon / Potato
+
+<Carmella>  I love science! Don’t you? What? You don’t? You monster.
+            With the power of this lemon, I will soon be able to power this whole computer!
+
+(See’s a lightning puzzle)
+
+<Carmella> What’s that? You want my lemon? I can’t lend you that!
+            Well… Maybe if you could find me a potato… 
+
+<fridge>    Look at all the food in here! Potatoes, potatoes, ...
+            Actually, there are only potatoes here...
+
+<fridge>    There’s a potato here. Perfect for science. Do you want to take it?
+            Yes - You got the potato!
+            No - You really ought to take it (You got the potato!) 
+
+<Carmella>  Oh! This potato is perfect for science! As promised, one lemon. (You get lemon)
+
+(Optional)
+
+<Carmella>  You know, I’ll bet potatoes can hold up to 2x as much charge as a lemon.
+            Friendship Bracelet
+
+(If you haven’t talked to Drake)
+
+<Josh>  Check out this bracelet. Isn’t it cool!?
+        I feel like I have the power of a million seahorses with this bracelet.
+        How powerful are seahorses? Haven’t you ever heard of horsepower?
+
+<Drake>     Josh took my friendship bracelet after he lost his. I am still mad at him
+
+<Josh>  Check out this bracelet. Isn’t it cool! What’s that? 
+        How did you know I took Drake’s bracelet. I guess I forgot...
+        Its power really came from our friendship... 
+        Tell him, he can have the bracelet if he wants.
+
+<Drake> What’s this? My power bracelet! 
+        … You know, it really isn’t as powerful without the friendship behind it.
+        Why don’t you keep it? I’m gonna make us some new bracelets.
+
+(Optional)
+
+<Drake> These new bracelets will have the power of 2 million sea horses!
+
+<Josh>      You know, you can just keep that bracelet if you want.
+            I think all that horsepower got to my head.
