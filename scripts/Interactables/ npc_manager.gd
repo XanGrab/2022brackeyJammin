@@ -20,7 +20,6 @@ func _on_enter_new_scene(path):
 		
 	if(sceneName == "fire2_d.tscn"):
 		increment_state("carmella")
-		increment_state("fridge")
 
 	
 	

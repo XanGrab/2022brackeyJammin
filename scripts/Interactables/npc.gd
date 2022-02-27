@@ -22,7 +22,9 @@ func _on_interact():
 		NpcManager.increment_state("vanessa")
 	
 	if(npc_name == "carmella" && state == 1):
-		SignalBus.emit_signal("item_picked_up", GameManager.Item.LEMON)
+		NpcManager.increment_state("fridge")
+	
+	if(npc_name == "fridge" && state == 1):
 		NpcManager.increment_state("carmella")
 	
 	if(npc_name == "josh" && state == 0):
