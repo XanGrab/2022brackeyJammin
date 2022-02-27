@@ -3,7 +3,7 @@ extends Node2D
 
 onready var collision= $StaticBody2D/CollisionShape2D
 
-var badge = GameManager.Item.BADGE
+var lemon = GameManager.Item.LEMON
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 	
 	#check for badge flag
 	print("test")
-	if GameManager.inventory_flags[badge]:
+	if GameManager.inventory_flags[lemon]:
 		collision.set_deferred("disabled", true)
 		
 	else:
@@ -20,7 +20,7 @@ func _ready():
 
 func on_item_picked_up(type):
 	#check badge flag at pick up
-	if type == badge:
+	if type == lemon:
 		collision.set_deferred("disabled", true)
 	else:
 		collision.set_deferred("disabled", false)

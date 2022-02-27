@@ -3,7 +3,7 @@ extends Node
 enum Item {KEY, BRACELET, BADGE, LEMON}
 
 #inventory
-#0-key, 1-bracelet, 2-badge
+#0-key, 1-bracelet, 2-badge 
 var inventory_flags = [false, false, false, false]
 var dream_flag = true
 
