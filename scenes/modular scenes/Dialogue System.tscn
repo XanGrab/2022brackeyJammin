@@ -100,7 +100,7 @@ margin_bottom = 16.0
 
 [node name="Text" type="RichTextLabel" parent="MarginContainer/Background Panel/Dialogue"]
 margin_left = 4.0
-margin_right = 274.0
+margin_right = 281.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 16.716, 0 )
 size_flags_horizontal = 3
@@ -112,8 +112,8 @@ scroll_active = false
 scroll_following = true
 
 [node name="Continue Button" type="TextureRect" parent="MarginContainer/Background Panel/Dialogue"]
-margin_left = 278.0
-margin_top = 24.0
+margin_left = 285.0
+margin_top = 31.0
 margin_right = 286.0
 margin_bottom = 32.0
 size_flags_vertical = 8
