@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://_Art/TestBG/Circles.png" type="Texture" id=1]
+[ext_resource path="res://_Shaders/Backgrounds.shader" type="Shader" id=2]
+[ext_resource path="res://scenes/modular scenes/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/modular scenes/Characters/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/modular scenes/Dialogue System.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.4975, 1 )
+colors = PoolColorArray( 0, 0.203125, 1, 1, 0.203922, 0.917647, 1, 0.47451, 0, 0.203922, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/screen_height = 640.0
+shader_param/amplitude = 0.239
+shader_param/frequency = 10.0
+shader_param/speed = 2.0
+shader_param/amplitude_vertical = 0.0
+shader_param/frequency_vertical = 0.0
+shader_param/speed_vertical = 0.0
+shader_param/scroll_direction = Vector2( 0, 0 )
+shader_param/scrolling_speed = 0.08
+shader_param/enable_palette_cycling = true
+shader_param/palette_speed = 0.1
+shader_param/palette = SubResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Floor" type="ColorRect" parent="YSort"]
+margin_left = -160.0
+margin_top = -96.0
+margin_right = 160.0
+margin_bottom = 96.0
+color = Color( 0.0901961, 0.00392157, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor(VFX)" type="TextureRect" parent="YSort"]
+material = SubResource( 4 )
+margin_left = -160.0
+margin_top = -96.0
+margin_right = 160.0
+margin_bottom = 96.0
+texture = ExtResource( 1 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor(VFX)2" type="TextureRect" parent="YSort"]
+material = SubResource( 4 )
+margin_left = -160.0
+margin_top = -96.0
+margin_right = 160.0
+margin_bottom = 96.0
+rect_pivot_offset = Vector2( 48, 96 )
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor(VFX)3" type="TextureRect" parent="YSort"]
+material = SubResource( 4 )
+margin_left = -160.0
+margin_top = -96.0
+margin_right = 160.0
+margin_bottom = 96.0
+rect_pivot_offset = Vector2( 48, 96 )
+texture = ExtResource( 1 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor(VFX)4" type="TextureRect" parent="YSort"]
+material = SubResource( 4 )
+margin_left = -160.0
+margin_top = -96.0
+margin_right = 160.0
+margin_bottom = 96.0
+rect_pivot_offset = Vector2( 48, 96 )
+texture = ExtResource( 1 )
+expand = true
+flip_h = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 0, -21 )
+z_index = 1
+
+[node name="DoorToNexus" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1, 95 )
+scale = Vector2( 2, 2 )
+z_index = 1
+move_to = "res://scenes/world/Dream World/mainhall_d.tscn"
+door_to_name = "DoorToChamber1"
+current_spawn_side = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialogue System" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="Wall (TileMap)" type="TileMap" parent="."]
+position = Vector2( 2, 19 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 1
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -327691, 2, 8, -327690, 2, 6, -327689, 536870914, 196610, -327688, 536870914, 196610, -327687, 536870914, 196610, -327686, 536870914, 196610, -327685, 536870914, 196610, -327684, 2, 196610, -327683, 2, 196610, -327682, 2, 196610, -327681, 2, 5, -393216, 2, 6, -393215, 536870914, 196610, -393214, 2, 196610, -393213, 2, 196610, -393212, 2, 196610, -393211, 2, 196610, -393210, 536870914, 196610, -393209, 536870914, 196610, -393208, 536870914, 196610, -393207, 2, 5, -393206, 2, 11, -262155, 2, 65544, -262154, 2, 131083, -262145, 2, 196616, -327680, 536870914, 196619, -327671, 2, 65544, -327670, 2, 131083, -196619, 2, 65544, -196618, 2, 131083, -262135, 2, 65544, -262134, 2, 131083, -131083, 2, 65544, -131082, 2, 131083, -196599, 2, 65544, -196598, 2, 131083, -65547, 2, 65544, -65546, 2, 131083, -131063, 2, 65544, -131062, 2, 131083, -11, 2, 65544, -10, 2, 131083, -65527, 2, 65544, -65526, 2, 131083, 65525, 2, 65544, 65526, 2, 131083, 9, 2, 65544, 10, 2, 131083, 131061, 2, 65544, 131062, 2, 131083, 65545, 2, 65544, 65546, 2, 131083, 196597, 2, 65544, 196598, 2, 131083, 131081, 2, 65544, 131082, 2, 131083, 262133, 2, 65544, 262134, 2, 131083, 196617, 2, 65544, 196618, 2, 131083, 327669, 2, 65544, 327670, 2, 65542, 327671, 2, 10, 327672, 2, 10, 327673, 2, 10, 327674, 2, 10, 327675, 2, 10, 327676, 2, 10, 327677, 2, 10, 327678, 2, 11, 262145, 2, 8, 262146, 2, 10, 262147, 2, 10, 262148, 2, 10, 262149, 2, 10, 262150, 2, 10, 262151, 2, 10, 262152, 2, 10, 262153, 2, 65541, 262154, 2, 131083, 393205, 2, 196616, 393206, 2, 196617, 393207, 2, 196617, 393208, 2, 196617, 393209, 2, 196617, 393210, 2, 196617, 393211, 2, 196617, 393212, 2, 196617, 393213, 2, 196617, 393214, 2, 196614, 393215, 2, 196610, 327680, 2, 196610, 327681, 2, 196613, 327682, 2, 196617, 327683, 2, 196617, 327684, 2, 196617, 327685, 2, 196617, 327686, 2, 196617, 327687, 2, 196617, 327688, 2, 196617, 327689, 2, 196617, 327690, 2, 196619 )
