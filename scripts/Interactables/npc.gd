@@ -8,7 +8,6 @@ func _ready():
 		NpcManager.register_npc(npc_name)
 
 func _on_interact():
-	print("hello!")
 	var state : int = NpcManager.get_state(npc_name)
 	
 	# prevent IooB exception
@@ -23,5 +22,4 @@ func increment_state():
 	
 func _input(_event):
 	if(Input.is_key_pressed(KEY_2)):
-		print("state incremented")
 		increment_state()

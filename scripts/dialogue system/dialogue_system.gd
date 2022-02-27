@@ -88,8 +88,8 @@ func _input(event):
 					selected = _current_options.option_text.size() - 1
 				emit_signal("option_change", selected)
 			
-#	if(Input.is_key_pressed(KEY_2) && _dialogue_queue.empty()):
-#		read_from_file_path("res://sample_dialogue.txt")
+	if(Input.is_key_pressed(KEY_2) && _dialogue_queue.empty()):
+		read_from_file_path("res://sample_dialogue.txt")
 
 # method used to initiate a dialogue sequence from a filename
 func read_from_file_path(fileName : String) -> void:

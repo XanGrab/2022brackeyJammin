@@ -1,0 +1,2 @@
+<fridge>    There’s a potato here. Perfect for science. Do you want to take it?
+            Actually, you should really just take one.
