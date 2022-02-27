@@ -5,15 +5,16 @@ enum Item {KEY, BRACELET, BADGE}
 #inventory
 #0-key, 1-bracelet, 2-badge
 var inventory_flags = [false, false, false]
-var dream_flag = false
+var dream_flag = true
 
 #What does this do again lol
 var current_scene = null
 
 #store which scene we went to sleep in
-var bed_return_scene = null
+var bed_return_scene = "res://scenes/world/Real World/bedroom_r.tscn"
 #store wake up position in relation to bed
-var wake_up_global_pos = null
+var wake_up_global_pos = Vector2(99.666664, 3)
+
 
 #declare door stuf
 var door_to: String
@@ -77,9 +78,10 @@ func _deferred_spawn():
 	door = get_tree().get_current_scene().find_node(door_to)
 	#grab player node and player's position to door spawn 
 	var player = get_tree().get_current_scene().find_node("Player")
+	
 	player.global_position = door.spawn[door.current_spawn_side].global_position
 
 func on_egg_picked_up():
 	egg_index += 1
 	if egg_index == 3:
-		print("you won!")
+		goto_scene("res://scenes/UI/End.tscn")
