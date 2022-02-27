@@ -23,11 +23,13 @@ tile_data = PoolIntArray( -196614, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 136, -8 )
 
-[node name="ClosetDoor" parent="YSort" instance=ExtResource( 4 )]
+[node name="DoorToMain" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 171, -3 )
 rotation = 3.14159
 scale = Vector2( 2, -1.5 )
 move_to = "res://scenes/world/Real World/mainhall_r.tscn"
+door_to_name = "ClassDoor"
+current_spawn_side = 2
 
 [node name="McComp" type="Sprite" parent="YSort"]
 position = Vector2( -248, -64 )

@@ -20,4 +20,16 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -4 )
 shape = SubResource( 1 )
 
+[node name="Bottom" type="Position2D" parent="."]
+position = Vector2( 0, 13 )
+
+[node name="Top" type="Position2D" parent="."]
+position = Vector2( 0, -20 )
+
+[node name="Right" type="Position2D" parent="."]
+position = Vector2( 16, -4 )
+
+[node name="Left" type="Position2D" parent="."]
+position = Vector2( -18, -4 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
