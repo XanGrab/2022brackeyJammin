@@ -12,6 +12,7 @@ func _ready():
 	enabled = false
 # warning-ignore:return_value_discarded
 	SignalBus.connect("item_picked_up", self, "_on_item_collection")
+	update_grab_ability()
 	
 
 func _physics_process(_delta):
