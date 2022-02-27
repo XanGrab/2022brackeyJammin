@@ -21,7 +21,7 @@ extents = Vector2( 8, 7 )
 [node name="Oldman" type="KinematicBody2D"]
 script = ExtResource( 2 )
 npc_name = "oldman"
-filePaths = [ "res://_TextContent/Wise old man/inital.txt", "res://_TextContent/Wise old man/after_door.txt", "res://_TextContent/Wise old man/02.txt" ]
+filePaths = [ "res://_TextContent/Wise old man/inital.txt", "res://_TextContent/Wise old man/02.txt" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -2 )
